@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import Source.cappedPhoto;
 
 
@@ -26,15 +27,11 @@ public class MainActivity extends AppCompatActivity {
         // String photoAr2[] = new String[150];
         //int arIndex = 0;
 
-        @Override
+    @Override
         protected void onCreate (Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-
-
         }
-
-
 
     public void buttonClick(View v) {
         EditText nameText = (EditText) findViewById(R.id.nameText);
@@ -45,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         photoAr[arIndex] = new cappedPhoto(photoStr, inputText);
         //Creates an instance of cappedPhoto in the array
         arIndex++;
-
+        TextView tView = (TextView) findViewById(R.id.textView2);
+        tView.setVisibility(View.VISIBLE);
     }
 
     public void onButtonClicked(View arg0) {
@@ -59,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
         //When upload photos button clicked goes into gallery and allows user to select
+        TextView tView = (TextView) findViewById(R.id.textView2);
+        tView.setVisibility(View.GONE);
     }
 
     Uri uri;
