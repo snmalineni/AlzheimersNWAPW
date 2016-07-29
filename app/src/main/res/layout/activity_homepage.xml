@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sneha.alzapp9.Homepage">
+    tools:context="com.sneha.newalzheimersapplication.Homepage">
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,8 +37,7 @@
         android:id="@+id/textClock"
         android:layout_below="@+id/welcome"
         android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:timeZone="America/Los_Angeles"/>
+        android:textSize="25sp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -59,6 +58,67 @@
         android:textSize="20sp"
         android:onClick="goTutorial"
         android:layout_below="@+id/button2"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="10dp"
+        android:text="Upload Photo"
+        android:id="@+id/button4"
+        android:onClick="goUpload"
+        android:textSize="20dp" />
+
+    <TabHost
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tabHost"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/library"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/game"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="left|center_vertical">
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_marginBottom="-4dp"></TabWidget>
+
+        </LinearLayout>
+    </TabHost>
 
 </RelativeLayout>
