@@ -1,0 +1,14 @@
+package com.sneha.newalzheimersapplication;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+public class AlzInformation extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_alz_information);
+    }
+    //Displays text objects giving basic info about alzheimier's
+}
