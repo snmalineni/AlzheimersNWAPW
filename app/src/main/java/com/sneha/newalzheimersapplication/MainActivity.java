@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
         tView.setVisibility(View.VISIBLE);
     }
 
+
+
+    public int getArIndex(){
+        return arIndex;
+    }
+
     public void onButtonClicked(View arg0) {
         EditText nameText = (EditText)findViewById(R.id.nameText);
         nameText.setText("", TextView.BufferType.EDITABLE);
