@@ -19,13 +19,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean newPhoto = true;
     private int PICK_IMAGE_REQUEST = 1;
 
-
-
-        cappedPhoto photoAr[] = new cappedPhoto[150];
-        int arIndex = 0;
-
-        // String photoAr2[] = new String[150];
-        //int arIndex = 0;
+    cappedPhoto photoAr[] = new cappedPhoto[150];
+    int arIndex = 0;
 
     @Override
         protected void onCreate (Bundle savedInstanceState) {
@@ -35,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonClick(View v) {
         EditText nameText = (EditText) findViewById(R.id.nameText);
-        //Finds current status of text field when done button clicked
         String inputText = nameText.getText().toString();
         //Takes input from text field and puts it into variable inputText
         String photoStr = uri.toString();
