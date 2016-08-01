@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewAlzheimersApplication</string>
+    <string name="image1">Image1</string>
+    <string name="image2">Image2</string>
 </resources>
