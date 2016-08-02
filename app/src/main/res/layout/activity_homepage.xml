@@ -61,33 +61,25 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button3"
-        android:layout_marginTop="10dp"
-        android:text="Upload Photo"
-        android:id="@+id/button4"
-        android:onClick="goUpload"
-        android:textSize="20dp" />
-
     <TabHost
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:id="@+id/tabHost"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:padding="5dp">
 
                 <LinearLayout
                     android:id="@+id/library"
@@ -113,7 +105,7 @@
 
             <TabWidget
                 android:id="@android:id/tabs"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:layout_marginBottom="-4dp"></TabWidget>
