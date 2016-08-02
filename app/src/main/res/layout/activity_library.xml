@@ -9,54 +9,58 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Library">
 
-    <TableLayout
-        android:id="@+id/tLayout"
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:stretchColumns="0,1,2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:id="@+id/scrollView2" >
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TableLayout
+            android:id="@+id/tLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1,2">
 
-            <ImageView android:id="@+id/imageViewA1"
-                android:layout_column="0"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/image1" />
-            <ImageView android:id="@+id/imageViewA2"
-                android:layout_column="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/image2" />
-            <ImageView android:id="@+id/imageViewA3"
-                android:layout_column="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/image3" />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                android:layout_height="wrap_content">
 
-            <ImageView android:id="@+id/imageViewB1"
-                android:layout_column="0"
+                <ImageView android:id="@+id/imageViewA1"
+                    android:layout_column="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@android:dimen/thumbnail_height"
+                    android:contentDescription="@string/image1" />
+                <ImageView android:id="@+id/imageViewA2"
+                    android:layout_column="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image2" />
+                <ImageView android:id="@+id/imageViewA3"
+                    android:layout_column="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image3" />
+            </TableRow>
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/image1" />
-            <ImageView android:id="@+id/imageViewB2"
-                android:layout_column="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/image2" />
-            <ImageView android:id="@+id/imageViewB3"
-                android:layout_column="2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/image3" />
+                android:layout_height="wrap_content">
 
-        </TableRow>
-    </TableLayout>
+                <ImageView android:id="@+id/imageViewB1"
+                    android:layout_column="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@android:dimen/thumbnail_height"
+                    android:contentDescription="@string/image1" />
+                <ImageView android:id="@+id/imageViewB2"
+                    android:layout_column="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/image2" />
+                <ImageView android:id="@+id/imageViewB3"
+                    android:layout_column="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/image3" />
+
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
 </RelativeLayout>
