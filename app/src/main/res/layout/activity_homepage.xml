@@ -59,7 +59,8 @@
         android:onClick="goTutorial"
         android:layout_below="@+id/button2"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:layout_alignEnd="@+id/tabHost" />
 
     <Button
         android:layout_width="wrap_content"
@@ -69,7 +70,9 @@
         android:text="Upload Photo"
         android:id="@+id/button4"
         android:onClick="goUpload"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:layout_alignEnd="@+id/tabHost"
+        android:layout_alignParentStart="true" />
 
     <TabHost
         android:layout_width="match_parent"
@@ -90,12 +93,6 @@
                 android:layout_weight="1">
 
                 <LinearLayout
-                    android:id="@+id/library"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/home"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -109,6 +106,13 @@
                     android:layout_gravity="left|center_vertical">
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/library"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal|bottom"></LinearLayout>
             </FrameLayout>
 
             <TabWidget

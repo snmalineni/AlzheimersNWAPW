@@ -6,7 +6,9 @@ package Source;
 
 import android.net.Uri;
 
-public class cappedPhoto {
+import java.io.Serializable;
+
+public class cappedPhoto implements Serializable {
 private String caption;
 private String photo;
 
