@@ -6,7 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import 	android.content.Intent;
 
+import java.util.ArrayList;
+
+import Source.cappedPhoto;
+
 public class Homepage extends AppCompatActivity {
+
+    public static ArrayList<cappedPhoto> photoAr = new ArrayList(50);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +38,7 @@ public class Homepage extends AppCompatActivity {
     public void goUpload(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
+
     } //when Tutorial button pressed, go to Tutorial page (TEMPORARY)
 }

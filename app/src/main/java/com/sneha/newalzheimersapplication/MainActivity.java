@@ -32,24 +32,20 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    public boolean newPhoto = true;
+    private boolean newPhoto = true;
     private int PICK_IMAGE_REQUEST = 1;
-    SharedPreferences sh_Pref;
-    Editor toEdit;
-    String inputText,photoStr;
-    cappedPhoto newElement;
-    Serialization captionphotos;
-    public static String fileName = "photocaption.ser";
-    Context context = this;
+
+    private Editor toEdit;
+
+    private static String fileName = "photocaption.ser";
+    private Context context = this;
+    private int arIndex = 0;
+    private Uri uri;
 
 
 
-    ArrayList<cappedPhoto> photoAr = new ArrayList(50);
-       public int arIndex = 0;
 
-
-
-        @Override
+    @Override
         protected void onCreate (Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
@@ -61,23 +57,27 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void buttonClick(View v) {
+
+        String inputText,photoStr;
+        cappedPhoto newElement;
+
         EditText nameText = (EditText) findViewById(R.id.nameText);
-        //Finds current status of text field when done button clicked
         inputText = nameText.getText().toString();
-        //Takes input from text field and puts it into variable inputText
         photoStr = uri.toString();
+
         newElement = new cappedPhoto(photoStr, inputText);
-        photoAr.add(newElement);
+        Homepage.photoAr.add(newElement);
+
         String file_name = "photocaptions";
 
         try
         {
             FileOutputStream fileOutputStream = context.openFileOutput(file_name, Context.MODE_PRIVATE);
             ObjectOutputStream os = new ObjectOutputStream(fileOutputStream);
-            os.writeObject(photoAr);
+            os.writeObject(Homepage.photoAr);
             os.close();
             fileOutputStream.close();
-            Toast.makeText(getApplicationContext() , "Photo and Caption are saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext() , "Photo and Name/Location are saved", Toast.LENGTH_LONG).show();
         }
         catch (FileNotFoundException e)
         {
@@ -93,18 +93,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        try
+       try
         {
             FileInputStream fileInputStream = context.openFileInput(file_name);
             ObjectInputStream is = new ObjectInputStream(fileInputStream);
 
-            photoAr = (ArrayList<cappedPhoto>) is.readObject();
+            Homepage.photoAr = (ArrayList<cappedPhoto>) is.readObject();
             is.close();
             fileInputStream.close();
-            for(int i = 0; i < photoAr.size(); i++) {
-                System.out.println(photoAr.get(i).getCap() + " " + photoAr.get(i).getUriString());
+            for (cappedPhoto cappedPhoto : Homepage.photoAr)
+            {
+                System.out.print(cappedPhoto.getCap() + " " + cappedPhoto.getUriString());
             }
-
         }
         catch (IOException e)
         {
@@ -114,11 +114,6 @@ public class MainActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-
-
-
-        //photoAr.add(newElement);
-        //Creates an instance of cappedPhoto in the array
     }
 
 
@@ -137,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
         //When upload photos button clicked goes into gallery and allows user to select
     }
 
-    Uri uri;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
