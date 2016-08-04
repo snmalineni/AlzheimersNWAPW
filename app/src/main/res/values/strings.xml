@@ -5,4 +5,6 @@
     <string name="string">Upload Photos</string>
     <string name="upload_photos">Upload Photos</string>
     <string name="app_tutorial">app_tutorial</string>
+    <string name="library">Library</string>
+    <string name="Library">library</string>
 </resources>
