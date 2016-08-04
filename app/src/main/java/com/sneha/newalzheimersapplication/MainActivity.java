@@ -12,8 +12,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.R.id;
+
 
 import Source.Serialization;
+
 import Source.cappedPhoto;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -39,31 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
     private static String fileName = "photocaption.ser";
     private Context context = this;
-    private int arIndex = 0;
     private Uri uri;
 
-
+    cappedPhoto photoAr[] = new cappedPhoto[50];
 
 
     @Override
-        protected void onCreate (Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-
-
-
-        }
-
-
+    protected void onCreate (Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
 
     public void buttonClick(View v) {
 
-        String inputText,photoStr;
+        String inputText, photoStr;
         cappedPhoto newElement;
 
         EditText nameText = (EditText) findViewById(R.id.nameText);
         inputText = nameText.getText().toString();
         photoStr = uri.toString();
+        //gets caption and uri
 
         newElement = new cappedPhoto(photoStr, inputText);
         Homepage.photoAr.add(newElement);
@@ -93,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-       try
+        /*try
         {
             FileInputStream fileInputStream = context.openFileInput(file_name);
             ObjectInputStream is = new ObjectInputStream(fileInputStream);
@@ -105,18 +103,14 @@ public class MainActivity extends AppCompatActivity {
             {
                 System.out.print(cappedPhoto.getCap() + " " + cappedPhoto.getUriString());
             }
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             e.printStackTrace();
-        }
-        catch (ClassNotFoundException e)
+        } catch (ClassNotFoundException e)
         {
             e.printStackTrace();
-        }
+        }*/
     }
-
-
 
 
     public void onButtonClicked(View arg0) {
