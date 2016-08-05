@@ -9,6 +9,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Library">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Library"
+        android:id="@+id/textView9"
+        android:layout_above="@+id/button5"
+        android:layout_centerHorizontal="true"
+        android:textSize="50sp"
+        android:layout_alignParentTop="true" />
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -28,17 +39,124 @@
                 <ImageView android:id="@+id/imageViewA1"
                     android:layout_column="0"
                     android:layout_width="match_parent"
-                    android:layout_height="@android:dimen/thumbnail_height"
-                    android:contentDescription="@string/image1" />
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
                 <ImageView android:id="@+id/imageViewA2"
                     android:layout_column="1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/image2" />
+                    android:layout_height="@dimen/imageViewA2"
+                    android:contentDescription="@string/image2"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
                 <ImageView android:id="@+id/imageViewA3"
                     android:layout_column="2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView android:id="@+id/imageViewB1"
+                    android:layout_column="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewB2"
+                    android:layout_column="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/imageViewA2"
+                    android:contentDescription="@string/image2"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewB3"
+                    android:layout_column="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView android:id="@+id/imageViewC1"
+                    android:layout_column="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewC2"
+                    android:layout_column="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/imageViewA2"
+                    android:contentDescription="@string/image2"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewC3"
+                    android:layout_column="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView android:id="@+id/imageViewD1"
+                    android:layout_column="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewD2"
+                    android:layout_column="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/imageViewA2"
+                    android:contentDescription="@string/image2"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewD3"
+                    android:layout_column="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView android:id="@+id/imageViewE1"
+                    android:layout_column="0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/image1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewE2"
+                    android:layout_column="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/imageViewA2"
+                    android:contentDescription="@string/image2"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
+                <ImageView android:id="@+id/imageViewE3"
+                    android:layout_column="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp" />
             </TableRow>
         </TableLayout>
     </ScrollView>
@@ -49,8 +167,8 @@
         android:text="@string/upload_photos"
         android:id="@+id/button5"
         android:onClick="toMain"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="false"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
 </RelativeLayout>
