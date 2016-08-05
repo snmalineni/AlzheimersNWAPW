@@ -41,11 +41,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-    public int getArIndex(){
-        return arIndex;
-    }
-
     public void onButtonClicked(View arg0) {
         EditText nameText = (EditText)findViewById(R.id.nameText);
         nameText.setText("", TextView.BufferType.EDITABLE);
