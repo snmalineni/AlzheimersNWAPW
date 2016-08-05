@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void buttonClick(View v) {
+    public void buttonDone(View v) {
 
         String inputText, photoStr;
         cappedPhoto newElement;
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onButtonClicked(View arg0) {
+    public void buttonSelect(View arg0) {
         EditText nameText = (EditText)findViewById(R.id.nameText);
         nameText.setText("", TextView.BufferType.EDITABLE);
 

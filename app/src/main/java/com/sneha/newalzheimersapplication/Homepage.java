@@ -41,6 +41,6 @@ public class Homepage extends AppCompatActivity {
     public void goLib(View view) {
         Intent intent = new Intent(this, Library.class);
         startActivity(intent);
-} //when Tutorial button pressed, go to Tutorial page (TEMPORARY)
+    } //when Tutorial button pressed, go to Tutorial page (TEMPORARY)
 
 }
