@@ -70,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             FileOutputStream fileOutputStream = context.openFileOutput(file_name, Context.MODE_PRIVATE);
+            File fileDir = new File(context.getFilesDir(), file_name);
+            String name = fileDir.getAbsolutePath();
+            System.out.println("-------OUTPUT-------");
+            System.out.println(name);
+
             ObjectOutputStream os = new ObjectOutputStream(fileOutputStream);
             os.writeObject(Homepage.photoAr);
             os.close();
