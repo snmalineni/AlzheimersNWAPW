@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
         //When upload photos button clicked goes into gallery and allows user to select
-        TextView tView = (TextView) findViewById(R.id.textView2);
-        tView.setVisibility(View.GONE);
     }
 
     public void buttonClick(View v) {
@@ -47,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         photoAr[arIndex] = new cappedPhoto(photoStr, inputText);
         //Creates an instance of cappedPhoto in the array
         arIndex++;
-        TextView tView = (TextView) findViewById(R.id.textView2);
-        tView.setVisibility(View.VISIBLE);
     }
 
 
