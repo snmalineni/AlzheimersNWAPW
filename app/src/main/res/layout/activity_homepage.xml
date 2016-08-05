@@ -75,7 +75,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Library"
-                android:onClick="goLib" />
+                android:id="@+id/button4"
+                android:onClick="goLib"/>
 
             <Button
                 android:layout_width="wrap_content"
