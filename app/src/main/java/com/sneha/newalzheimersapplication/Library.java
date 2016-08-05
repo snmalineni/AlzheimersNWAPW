@@ -46,7 +46,7 @@ public class Library extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ImageView imgView = (ImageView) findViewById(R.id.imageViewA1);
+        ImageView imgView = (ImageView) findViewById(R.id.A1);
         imgView.setImageURI(Uri.parse(name));
 
         System.out.println("-------INTPUT-------");

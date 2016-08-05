@@ -6,7 +6,6 @@ import android.os.Bundle;
 
 import android.view.View;
 import 	android.content.Intent;
-import android.R.id;
 
 
 import java.util.ArrayList;
@@ -41,6 +40,6 @@ public class Homepage extends AppCompatActivity {
     public void goLib(View view) {
         Intent intent = new Intent(this, Library.class);
         startActivity(intent);
-    } //when Tutorial button pressed, go to Tutorial page (TEMPORARY)
+    }
 
 }

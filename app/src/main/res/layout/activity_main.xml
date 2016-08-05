@@ -56,7 +56,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_below="buttonLoadPicture"
         android:stretchColumns="0,1,2"
         android:id="@+id/btnTable">
 
@@ -67,7 +66,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Library" />
+                android:text="Library"
+                android:onClick="goLib" />
 
             <Button
                 android:layout_width="wrap_content"

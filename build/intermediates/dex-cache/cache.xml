@@ -5,7 +5,7 @@
         jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="24.0.1"
-        sha1="d105782a9d6f4e42a26da65a2fb76e28d05ef1f5">
+        sha1="4ad38eae9fa76de0b15d0f6fb32adeecf01842d3">
         <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8c74df61231f4649fe9ffaf9e4e774a6b0863770/classes.dex" />
     </item>
     <item
@@ -54,7 +54,7 @@
         jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="24.0.1"
-        sha1="bdab184251b6c4cd3b815e8d2d141e500bbf73c4">
+        sha1="1b612c1fb740cdc72a3a01d982f71a1610c4bdc6">
         <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_84360d33929ca25e0b6b81785d543ed52b46d9ac/classes.dex" />
     </item>
 

@@ -18,7 +18,6 @@ import android.R.id;
 import Source.Serialization;
 
 import Source.cappedPhoto;
-import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.widget.Toast;
 
@@ -27,7 +26,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import java.util.ArrayList;
@@ -79,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             os.writeObject(Homepage.photoAr);
             os.close();
             fileOutputStream.close();
-            Toast.makeText(getApplicationContext() , "Photo and Name/Location are saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext() , "Photo and Name are saved", Toast.LENGTH_LONG).show();
         }
         catch (FileNotFoundException e)
         {
@@ -150,8 +148,17 @@ public class MainActivity extends AppCompatActivity {
                 //Happens if photo is null
             }
 
-
         }
+    }
+
+    public void goHome(View view) {
+        Intent intent = new Intent(this, Homepage.class);
+        startActivity(intent);
+    }
+
+    public void goLib(View view) {
+        Intent intent = new Intent(this, Library.class);
+        startActivity(intent);
     }
 }
 

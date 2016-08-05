@@ -46,7 +46,7 @@
                 <ImageView android:id="@+id/A2"
                     android:layout_column="1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/A2"
+                    android:layout_height="@dimen/imageViewA2"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
                 <ImageView android:id="@+id/A3"
@@ -70,7 +70,7 @@
                 <ImageView android:id="@+id/B2"
                     android:layout_column="1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/A2"
+                    android:layout_height="@dimen/imageViewA2"
                     android:contentDescription="@string/image2"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
@@ -95,7 +95,7 @@
                 <ImageView android:id="@+id/C2"
                     android:layout_column="1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/A2"
+                    android:layout_height="@dimen/imageViewA2"
                     android:contentDescription="@string/image2"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
@@ -121,7 +121,7 @@
                 <ImageView android:id="@+id/D2"
                     android:layout_column="1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/A2"
+                    android:layout_height="@dimen/imageViewA2"
                     android:contentDescription="@string/image2"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
@@ -147,7 +147,7 @@
                 <ImageView android:id="@+id/E2"
                     android:layout_column="1"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/A2"
+                    android:layout_height="@dimen/imageViewA2"
                     android:contentDescription="@string/image2"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
