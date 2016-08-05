@@ -34,7 +34,6 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-
     private boolean newPhoto = true;
     private int PICK_IMAGE_REQUEST = 1;
 
@@ -125,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
         //When upload photos button clicked goes into gallery and allows user to select
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
