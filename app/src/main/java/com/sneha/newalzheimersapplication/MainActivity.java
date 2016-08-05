@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     /* public void onButtonClicked(View arg0) {
->>>>>>> library
         EditText nameText = (EditText)findViewById(R.id.nameText);
         nameText.setText("", TextView.BufferType.EDITABLE);
 
