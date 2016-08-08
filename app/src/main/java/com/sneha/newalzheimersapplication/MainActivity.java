@@ -12,36 +12,23 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.R.id;
-
-
-import Source.Serialization;
 
 import Source.cappedPhoto;
 import android.content.SharedPreferences.Editor;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-import java.util.ArrayList;
-
 
 public class MainActivity extends AppCompatActivity {
-    private boolean newPhoto = true;
     private int PICK_IMAGE_REQUEST = 1;
 
-    private Editor toEdit;
-
-    private static String fileName = "photocaption.ser";
     private Context context = this;
     private Uri uri;
-
-    cappedPhoto photoAr[] = new cappedPhoto[50];
 
 
     @Override
