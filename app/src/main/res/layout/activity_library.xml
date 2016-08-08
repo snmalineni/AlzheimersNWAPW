@@ -48,7 +48,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/imageViewA2"
                     android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="5dp"
+                    android:backgroundTint="@color/abc_btn_colored_borderless_text_material" />
                 <ImageView android:id="@+id/A3"
                     android:layout_column="2"
                     android:layout_width="match_parent"
@@ -58,7 +59,8 @@
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:onClick="libraryClick">
 
                 <ImageView android:id="@+id/B1"
                     android:layout_column="0"
