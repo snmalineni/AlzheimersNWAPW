@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import Source.cappedPhoto;
-import android.content.SharedPreferences.Editor;
 import android.widget.Toast;
 
 import java.io.File;
