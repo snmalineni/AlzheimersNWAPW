@@ -4,4 +4,5 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="imageViewA1">150dp</dimen>
     <dimen name="imageViewA2">150dp</dimen>
+    <dimen name="gameIcon">275dp</dimen>
 </resources>
