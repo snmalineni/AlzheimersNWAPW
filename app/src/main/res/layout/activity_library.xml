@@ -15,10 +15,17 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Library"
         android:id="@+id/textView9"
-        android:layout_above="@+id/button5"
         android:layout_centerHorizontal="true"
-        android:textSize="50sp"
-        android:layout_alignParentTop="true" />
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textColor="#0000000"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollHorizontal">
+
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -67,17 +74,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tA1" />
+                    android:id="@+id/tA1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:olor="#0000000"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tA2" />
+                    android:id="@+id/tA2"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tA3" />
+                    android:id="@+id/tA3"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -112,17 +132,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tB1" />
+                    android:id="@+id/tB1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tB2" />
+                    android:id="@+id/tB2"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tB3" />
+                    android:id="@+id/tB3"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -134,7 +166,8 @@
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/image1"
                     android:paddingLeft="10dp"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="5dp"
+                    />
                 <ImageView android:id="@+id/C2"
                     android:layout_column="1"
                     android:layout_width="match_parent"
@@ -157,17 +190,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tC1" />
+                    android:id="@+id/tC1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tC2" />
+                    android:id="@+id/tC2"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tC3" />
+                    android:id="@+id/tC3"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -203,17 +248,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tD1" />
+                    android:id="@+id/tD1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tD2" />
+                    android:id="@+id/tD2"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tD3" />
+                    android:id="@+id/tD3"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -248,20 +305,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tE1" />
+                    android:id="@+id/tE1"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tE2" />
+                    android:id="@+id/tE2"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:id="@+id/tE3" />
+                    android:id="@+id/tE3"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    android:textColor="#0000000"/>
             </TableRow>
         </TableLayout>
     </ScrollView>
+    </HorizontalScrollView>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -277,7 +347,10 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Library" />
+                android:text="Upload Photos"
+                android:id="@+id/button5"
+                android:onClick="toMain"
+                />
 
             <Button
                 android:layout_width="wrap_content"
@@ -296,25 +369,6 @@
 
     </TableLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload Photos"
-        android:id="@+id/button5"
-        android:onClick="toMain"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Turn your device horizontally for better viewing!"
-        android:id="@+id/libraryTipText"
-        android:layout_alignTop="@+id/button5"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/scrollView2"
-        android:layout_toEndOf="@+id/button5"
-        android:textColor="#000000"/>
 
 </RelativeLayout>
