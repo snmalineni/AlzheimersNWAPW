@@ -1,11 +1,6 @@
 package Source;
 
-/**
- * Created by sneha on 7/28/16.
- */
-
 import android.net.Uri;
-
 import java.io.Serializable;
 
 public class cappedPhoto implements Serializable {
@@ -19,8 +14,8 @@ public class cappedPhoto implements Serializable {
      return photo;
  }
     public cappedPhoto(String b, String str) {
-        caption = new String(str);
-        photo = new String(b);
+        caption = str;
+        photo = b;
     }
 
 

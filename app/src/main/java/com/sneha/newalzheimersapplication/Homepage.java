@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import android.view.View;
 import 	android.content.Intent;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import Source.cappedPhoto;
 
 public class Homepage extends AppCompatActivity {
 
-    public static ArrayList<cappedPhoto> photoAr = new ArrayList<cappedPhoto>();
+    public static ArrayList<cappedPhoto> photoAr = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,12 @@ public class Homepage extends AppCompatActivity {
     }
 
     public void goGame(View view) {
-        Intent intent = new Intent(this, Game.class);
-        startActivity(intent);
+        if (Homepage.photoAr != null) {
+            Intent intent = new Intent(this, Game.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext() , "Upload some images first!", Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -48,7 +48,8 @@
         android:layout_below="@+id/A"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:onClick="clickB" />
 
     <Button
         android:layout_width="wrap_content"
@@ -58,7 +59,8 @@
         android:layout_below="@+id/B"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:onClick="clickC" />
 
     <Button
         android:layout_width="wrap_content"
@@ -68,7 +70,8 @@
         android:layout_below="@+id/C"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:onClick="clickD" />
 
     <Button
         android:layout_width="wrap_content"

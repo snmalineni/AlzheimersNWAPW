@@ -1,7 +1,5 @@
 package com.sneha.newalzheimersapplication;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -85,7 +83,7 @@ public class Game extends AppCompatActivity {
     public void clickA(View view) {
         if (answer == btnA.getText()) {
             btnA.setBackgroundResource(R.drawable.green);
-            //Toast.makeText();
+            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
         }
         else {
             btnA.setBackgroundResource(R.drawable.red);
@@ -94,8 +92,7 @@ public class Game extends AppCompatActivity {
     public void clickB(View view) {
         if (answer == btnB.getText()) {
             btnB.setBackgroundResource(R.drawable.green);
-            //Toast.makeText();
-        }
+            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
         else {
             btnB.setBackgroundResource(R.drawable.red);
         }
@@ -103,8 +100,7 @@ public class Game extends AppCompatActivity {
     public void clickC(View view) {
         if (answer == btnC.getText()) {
             btnC.setBackgroundResource(R.drawable.green);
-            //Toast.makeText();
-        }
+            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
         else {
             btnC.setBackgroundResource(R.drawable.red);
         }
@@ -112,8 +108,7 @@ public class Game extends AppCompatActivity {
     public void clickD(View view) {
         if (answer == btnD.getText()) {
             btnD.setBackgroundResource(R.drawable.green);
-            //Toast.makeText();
-        }
+            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
         else {
             btnD.setBackgroundResource(R.drawable.red);
         }
