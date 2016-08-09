@@ -11,8 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,7 +30,8 @@ import Source.cappedPhoto;
 
 public class Library extends AppCompatActivity {
 
-    ArrayList<ImageView> librarylayout = new ArrayList<ImageView>();
+    ArrayList<ImageView> librarylayout = new ArrayList<>();
+    ArrayList<TextView> textlayouts = new ArrayList<>();
     private Context context = this;
 
     @Override
@@ -51,6 +55,23 @@ public class Library extends AppCompatActivity {
         librarylayout.add((ImageView) findViewById(R.id.E1));
         librarylayout.add((ImageView) findViewById(R.id.E2));
         librarylayout.add((ImageView) findViewById(R.id.E3));
+
+        textlayouts.add((TextView)findViewById(R.id.tA1));
+        textlayouts.add((TextView)findViewById(R.id.tA2));
+        textlayouts.add((TextView)findViewById(R.id.tA3));
+        textlayouts.add((TextView)findViewById(R.id.tB1));
+        textlayouts.add((TextView)findViewById(R.id.tB2));
+        textlayouts.add((TextView)findViewById(R.id.tB3));
+        textlayouts.add((TextView)findViewById(R.id.tC1));
+        textlayouts.add((TextView)findViewById(R.id.tC2));
+        textlayouts.add((TextView)findViewById(R.id.tC3));
+        textlayouts.add((TextView)findViewById(R.id.tD1));
+        textlayouts.add((TextView)findViewById(R.id.tD2));
+        textlayouts.add((TextView)findViewById(R.id.tD3));
+        textlayouts.add((TextView)findViewById(R.id.tE1));
+        textlayouts.add((TextView)findViewById(R.id.tE2));
+        textlayouts.add((TextView)findViewById(R.id.tE3));
+
 
 
     }
@@ -85,16 +106,17 @@ public class Library extends AppCompatActivity {
         for (cappedPhoto cP : Homepage.photoAr) {
 
 
-            String imgViewId = librarylayout.get(iteration).getId() +"";
-            Toast.makeText(getApplicationContext(),imgViewId, Toast.LENGTH_SHORT).show();
             Uri imageUri = Uri.parse(cP.getUriString());
+            String imageCaption = cP.getCap();
             ImageView imgView = (ImageView) (librarylayout.get(iteration));
+            TextView txtView = (TextView) (textlayouts.get(iteration));
 
             try {
 
 
                 Bitmap thumbnail2 = getThumbnail(imageUri,this);
                 imgView.setImageBitmap(thumbnail2);
+                txtView.setText(imageCaption);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -129,7 +151,7 @@ public class Library extends AppCompatActivity {
 
         int originalSize = (onlyBoundsOptions.outHeight > onlyBoundsOptions.outWidth) ? onlyBoundsOptions.outHeight : onlyBoundsOptions.outWidth;
 
-        double ratio = (originalSize > 64) ? (originalSize / 64) : 1.0;
+        double ratio = (originalSize > 70) ? (originalSize / 250) : 1.0;
 
         BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
         bitmapOptions.inSampleSize = getPowerOfTwoForSampleRatio(ratio);
