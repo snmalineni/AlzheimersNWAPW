@@ -97,7 +97,11 @@
                 android:layout_height="wrap_content"
                 android:text="Game"
                 android:id="@+id/button7"
+
                 android:layout_column="2" />
+
+                android:onClick="goGame"/>
+
         </TableRow>
 
     </TableLayout>
