@@ -30,12 +30,10 @@ public class MainActivity extends AppCompatActivity {
     private Context context = this;
     private Uri selectedImageURI;
 
-<<<<<<< HEAD
+
     cappedPhoto photoAr[] = new cappedPhoto[50];
     private Object myClassConstant;
 
-=======
->>>>>>> ccc61e96ed561ad1259226da1656497224180bc6
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
