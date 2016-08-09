@@ -42,4 +42,8 @@ public class Homepage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goGame(View view) {
+        Intent intent = new Intent(this, Game.class);
+        startActivity(intent);
+    }
 }
