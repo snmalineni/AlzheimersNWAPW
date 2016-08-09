@@ -16,6 +16,7 @@ public class AlzInformation extends AppCompatActivity {
 
     public void goHome(View view) {
         Intent intent = new Intent(this, Homepage.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 }
