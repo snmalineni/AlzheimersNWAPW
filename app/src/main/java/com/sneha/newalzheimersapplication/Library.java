@@ -160,4 +160,9 @@ public class Library extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goGame(View view) {
+        Intent intent = new Intent(this, Game.class);
+        startActivity(intent);
+    }
+
 }
