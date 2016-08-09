@@ -2,24 +2,10 @@
 <items version="2" >
 
     <item
-        jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
-        jumboMode="true"
-        revision="24.0.1"
-        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
-        <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.1.1_cc62fb48c8aecae1ff2de7bf85d33e51c9ec87af/classes.dex" />
-    </item>
-    <item
-        jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
-        jumboMode="true"
-        revision="24.0.1"
-        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
-        <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.1.1_5f38f0f221fa74e1289e9e31333f89c47f5a5cbf/classes.dex" />
-    </item>
-    <item
         jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="24.0.1"
-        sha1="76fb3f61ecc1609c440bb3674113b5a59b97ca86">
+        sha1="1789cc863cbce42084767ad1c204de4caa2b440a">
         <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_8c74df61231f4649fe9ffaf9e4e774a6b0863770/classes.dex" />
     </item>
     <item
@@ -44,6 +30,13 @@
         <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.1.1_9356a77f2a05be7f493c9478a2d894da28e24fda/classes.dex" />
     </item>
     <item
+        jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.1.1_cc62fb48c8aecae1ff2de7bf85d33e51c9ec87af/classes.dex" />
+    </item>
+    <item
         jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
         jumboMode="true"
         revision="24.0.1"
@@ -51,10 +44,17 @@
         <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.1.1_ec9e4fd870c024f73df5a4bf485cf43919180ea8/classes.dex" />
     </item>
     <item
+        jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.1.1_5f38f0f221fa74e1289e9e31333f89c47f5a5cbf/classes.dex" />
+    </item>
+    <item
         jar="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="24.0.1"
-        sha1="04eb3189c612309ffa0c9b99fd596da74f20130d">
+        sha1="bc62f8436060421a8ab1cd20228f8e6137adea45">
         <dex dex="/Users/savannahbowerfind/AndroidStudioProjects/AlzApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_84360d33929ca25e0b6b81785d543ed52b46d9ac/classes.dex" />
     </item>
 

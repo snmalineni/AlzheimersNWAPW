@@ -20,13 +20,13 @@ import Source.cappedPhoto;
 
 public class Game extends AppCompatActivity {
 
-    private ImageView imgView = (ImageView) findViewById(R.id.imgView);
-    private TextView myName = (TextView) findViewById(R.id.myName);
-    private Button btnA = (Button) findViewById(R.id.A);
-    private Button btnB = (Button) findViewById(R.id.B);
-    private Button btnC = (Button) findViewById(R.id.C);
-    private Button btnD = (Button) findViewById(R.id.D);
-    private Button btnStart = (Button) findViewById(R.id.btnStart);
+    private ImageView imgView;
+    private TextView myName;
+    private Button btnA;
+    private Button btnB;
+    private Button btnC;
+    private Button btnD;
+    private Button btnStart;
     private Question q1;
     private String answer;
 
@@ -34,6 +34,11 @@ public class Game extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        btnA = (Button) findViewById(R.id.A);
+        btnB = (Button) findViewById(R.id.B);
+        btnC = (Button) findViewById(R.id.C);
+        btnD = (Button) findViewById(R.id.D);
 
         myName.setVisibility(View.GONE);
         btnA.setVisibility(View.GONE);
@@ -44,6 +49,7 @@ public class Game extends AppCompatActivity {
 
 
     public void startGame(View view){
+        btnStart = (Button) findViewById(R.id.btnStart);
         btnStart.setVisibility(View.GONE);
 
         Uri displayUri;
@@ -73,6 +79,7 @@ public class Game extends AppCompatActivity {
         remoteViews.setTextViewText(R.id.B, ans[1]);
         remoteViews.setTextViewText(R.id.C, ans[2]);
         remoteViews.setTextViewText(R.id.D, ans[3]);
+        imgView.setImageURI(displayUri);
     }
 
     public void clickA(View view) {
