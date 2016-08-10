@@ -2,6 +2,7 @@ package com.sneha.newalzheimersapplication;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +15,9 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,23 +47,16 @@ public class Game extends AppCompatActivity {
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
         btnD = (Button) findViewById(R.id.D);
+        btnStart = (Button) findViewById(R.id.btnStart);
 
-        //btnStart = (Button) findViewById(R.id.btnStart);
-
-        //myName.setVisibility(View.GONE);
-        //btnA.setVisibility(View.GONE);
-        //btnB.setVisibility(View.GONE);
-        //btnC.setVisibility(View.GONE);
-       // btnD.setVisibility(View.GONE);
-    }
-
-    protected void onResume(){
-        super.onResume();
+        myName.setVisibility(View.GONE);
+        btnA.setVisibility(View.GONE);
+        btnB.setVisibility(View.GONE);
+        btnC.setVisibility(View.GONE);
+        btnD.setVisibility(View.GONE);
     }
 
     public void startGame(View v){
-
-
         String file_name = "photocaptions";
         String name = null;
 
@@ -80,12 +76,14 @@ public class Game extends AppCompatActivity {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        //btnStart.setVisibility(View.GONE);
-        //myName.setVisibility(View.VISIBLE);
-        //btnA.setVisibility(View.VISIBLE);
-        //btnB.setVisibility(View.VISIBLE);
-        //btnC.setVisibility(View.VISIBLE);
-        //btnD.setVisibility(View.VISIBLE);
+        //fills homepage.photoAr
+
+        btnStart.setVisibility(View.GONE);
+        myName.setVisibility(View.VISIBLE);
+        btnA.setVisibility(View.VISIBLE);
+        btnB.setVisibility(View.VISIBLE);
+        btnC.setVisibility(View.VISIBLE);
+        btnD.setVisibility(View.VISIBLE);
 
         Uri displayUri;
         ArrayList<String> abcd = new ArrayList<>();
@@ -125,14 +123,16 @@ public class Game extends AppCompatActivity {
         btnC.setText(abcd.get(2));
         btnD.setText(abcd.get(3));
 
+        InputStream inputPhotoAr;
+        Bitmap game = null;
         try {
-            Bitmap thumbnail3 = Library.getThumbnail(displayUri,this);
-            imgView.setImageBitmap(thumbnail3);
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            inputPhotoAr = this.getContentResolver().openInputStream(displayUri);
+            game = BitmapFactory.decodeStream(inputPhotoAr);
+            game = Bitmap.createScaledBitmap(game, 275, 275, false);
+        } catch (FileNotFoundException e2) {
+            Toast.makeText(getApplicationContext(), "Error: Image Failed to Load", Toast.LENGTH_LONG).show();
         }
-        //sets imageview to image URI and text on answer buttons to 4 answers in random order
+        imgView.setImageBitmap(game);
     }
 
     public void clickA(View view) {
