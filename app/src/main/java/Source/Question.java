@@ -46,12 +46,12 @@ public class Question {
             rCP = Homepage.photoAr.get(r);
             optb = rCP.getCap();
             //sets optb to random cappedPhoto caption
-        } while (optb.compareTo(ans) != 0);
+        } while (optb.compareTo(ans) != 0 && optb.compareTo(opta) != 0);
         do {
             rCP = Homepage.photoAr.get(r);
             optc = rCP.getCap();
             //sets optc to random cappedPhoto caption
-        } while (optc.compareTo(ans) != 0);
+        } while (optc.compareTo(ans) != 0 && optc.compareTo(optb) != 0 && optc.compareTo(opta) != 0);
     }
     public int getID() {return ID;}
     public Uri getimgUri() {
