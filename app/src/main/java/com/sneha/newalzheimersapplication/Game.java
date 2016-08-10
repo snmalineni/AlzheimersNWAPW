@@ -46,43 +46,43 @@ public class Game extends AppCompatActivity {
 
 
     public void startGame(View v){
-        btnStart = (Button) findViewById(R.id.btnStart);
-        btnStart.setVisibility(View.GONE);
+        v.setVisibility(View.GONE);
         Uri displayUri;
-
         ArrayList<String> abcd = new ArrayList<>(Homepage.photoAr.size());
+        ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>();
 
-        ArrayList<cappedPhoto> arList = new ArrayList<>();
-        for (int i=0; i<Homepage.photoAr.size(); i++) arList.add(i, Homepage.photoAr.get(i));
-        Collections.shuffle(arList);
+        for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(i, Homepage.photoAr.get(i));
+        Collections.shuffle(photoArShuffled);
+        //puts contents of photoAr into photoArShuffled in random order
 
-        System.out.println("------reg list------");
-        for (int j=0; j<4; j++) System.out.println(Homepage.photoAr.get(j).getCap());
+        System.out.println("------reg list------"); //DELETE
+        for (int j=0; j<Homepage.photoAr.size(); j++) System.out.println(Homepage.photoAr.get(j).getCap()); //DELETE
+        System.out.println("------shuffled list------"); //DELETE
+        for (int j=0; j<4; j++) System.out.println(photoArShuffled.get(j).getCap()); //DELETE
 
-        System.out.println("------shuffled list------");
-        for (int j=0; j<4; j++) System.out.println(arList.get(j).getCap());
-
-        Question q1 = new Question(arList.get(0));
+        Question q1 = new Question(photoArShuffled.get(0));
+        //declares a question with a random cappedPhoto
 
         displayUri = q1.getimgUri();
         answer = q1.getans();
+        //sets image URI to random cappedPhoto's URI; records correct answer
 
         abcd.add(q1.getopta());
         abcd.add(q1.getoptb());
         abcd.add(q1.getoptc());
         abcd.add(q1.getans());
+        //adds three random strings and one correct string to abcd
 
         Collections.shuffle(abcd);
-
-        String ans[] = new String[4];
-        for (int i=0; i<4; i++) ans[i] = abcd.get(i);
+        //shuffles abcd
 
         RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_game);
-        remoteViews.setTextViewText(R.id.A, ans[0]);
-        remoteViews.setTextViewText(R.id.B, ans[1]);
-        remoteViews.setTextViewText(R.id.C, ans[2]);
-        remoteViews.setTextViewText(R.id.D, ans[3]);
+        remoteViews.setTextViewText(R.id.A, abcd.get(0));
+        remoteViews.setTextViewText(R.id.B, abcd.get(1));
+        remoteViews.setTextViewText(R.id.C, abcd.get(2));
+        remoteViews.setTextViewText(R.id.D, abcd.get(3));
         imgView.setImageURI(displayUri);
+        //sets imageview to image URI and text on answer buttons to 4 answers in random order
     }
 
     public void clickA(View view) {
