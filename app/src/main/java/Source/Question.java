@@ -17,19 +17,19 @@ public class Question {
 
     public Question() {
         ID=0;
-        imgUri=null;
-        opta=null;
-        optb=null;
-        optc=null;
-        ans=null;
+        imgUri="";
+        opta="";
+        optb="";
+        optc="";
+        ans="";
     }
 
     public Question(cappedPhoto cPhoto) {
         imgUri = cPhoto.getUriString();
         ans = cPhoto.getCap();
-        opta = null;
-        optb = null;
-        optc = null;
+        opta = "";
+        optb = "";
+        optc = "";
 
         Random randomNumber = new Random();
         int arLength = Homepage.photoAr.size();
@@ -56,10 +56,9 @@ public class Question {
             //sets optc to random cappedPhoto caption
         } while (optc.compareTo(ans) == 0 || optc.compareTo(optb) == 0 || optc.compareTo(opta) == 0);
     }
+
     public int getID() {return ID;}
-    public Uri getimgUri() {
-        return parse(imgUri);
-    }
+    public Uri getimgUri() {return Uri.parse(imgUri);}
     public String getopta() {return opta;}
     public String getoptb() {return optb;}
     public String getoptc() {return optc;}

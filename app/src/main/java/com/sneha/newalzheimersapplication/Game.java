@@ -44,17 +44,23 @@ public class Game extends AppCompatActivity {
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
         btnD = (Button) findViewById(R.id.D);
-        btnStart = (Button) findViewById(R.id.btnStart);
 
-        myName.setVisibility(View.GONE);
-        btnA.setVisibility(View.GONE);
-        btnB.setVisibility(View.GONE);
-        btnC.setVisibility(View.GONE);
-        btnD.setVisibility(View.GONE);
+        //btnStart = (Button) findViewById(R.id.btnStart);
+
+        //myName.setVisibility(View.GONE);
+        //btnA.setVisibility(View.GONE);
+        //btnB.setVisibility(View.GONE);
+        //btnC.setVisibility(View.GONE);
+       // btnD.setVisibility(View.GONE);
     }
 
     protected void onResume(){
         super.onResume();
+    }
+
+    public void startGame(View v){
+
+
         String file_name = "photocaptions";
         String name = null;
 
@@ -74,21 +80,21 @@ public class Game extends AppCompatActivity {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public void startGame(View v){
-        btnStart.setVisibility(View.GONE);
-        myName.setVisibility(View.VISIBLE);
-        btnA.setVisibility(View.VISIBLE);
-        btnB.setVisibility(View.VISIBLE);
-        btnC.setVisibility(View.VISIBLE);
-        btnD.setVisibility(View.VISIBLE);
+        //btnStart.setVisibility(View.GONE);
+        //myName.setVisibility(View.VISIBLE);
+        //btnA.setVisibility(View.VISIBLE);
+        //btnB.setVisibility(View.VISIBLE);
+        //btnC.setVisibility(View.VISIBLE);
+        //btnD.setVisibility(View.VISIBLE);
 
         Uri displayUri;
-        ArrayList<String> abcd = new ArrayList<>(4);
+        ArrayList<String> abcd = new ArrayList<>();
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
 
-        for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(Homepage.photoAr.get(i));
+        for (int i=0; i<Homepage.photoAr.size(); i++)
+        {
+            photoArShuffled.add(Homepage.photoAr.get(i));
+        }
         Collections.shuffle(photoArShuffled);
         //puts contents of photoAr into photoArShuffled in random order
 
