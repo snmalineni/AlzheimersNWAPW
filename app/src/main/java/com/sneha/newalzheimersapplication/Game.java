@@ -23,6 +23,7 @@ public class Game extends AppCompatActivity {
     private Button btnB;
     private Button btnC;
     private Button btnD;
+    private TextView myName;
     private Button btnStart;
     private String answer;
 
@@ -31,7 +32,7 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        TextView myName = (TextView) findViewById(R.id.myName);
+        myName = (TextView) findViewById(R.id.myName);
         btnA = (Button) findViewById(R.id.A);
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
@@ -47,6 +48,12 @@ public class Game extends AppCompatActivity {
 
     public void startGame(View v){
         v.setVisibility(View.GONE);
+        myName.setVisibility(View.VISIBLE);
+        btnA.setVisibility(View.VISIBLE);
+        btnB.setVisibility(View.VISIBLE);
+        btnC.setVisibility(View.VISIBLE);
+        btnD.setVisibility(View.VISIBLE);
+
         Uri displayUri;
         ArrayList<String> abcd = new ArrayList<>(Homepage.photoAr.size());
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>();
@@ -83,6 +90,7 @@ public class Game extends AppCompatActivity {
         remoteViews.setTextViewText(R.id.D, abcd.get(3));
         imgView.setImageURI(displayUri);
         //sets imageview to image URI and text on answer buttons to 4 answers in random order
+
     }
 
     public void clickA(View view) {

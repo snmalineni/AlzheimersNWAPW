@@ -155,7 +155,7 @@ public class Library extends AppCompatActivity {
 
         BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
         bitmapOptions.inSampleSize = getPowerOfTwoForSampleRatio(ratio);
-        bitmapOptions.inDither=true;//optional
+        //bitmapOptions.inDither=true;//deprecated
         bitmapOptions.inPreferredConfig=Bitmap.Config.ARGB_8888;//optional
         input = context.getContentResolver().openInputStream(uri);
         Bitmap bitmap = BitmapFactory.decodeStream(input, null, bitmapOptions);
