@@ -31,45 +31,38 @@ public class Question {
         optb = "";
         optc = "";
 
-       // Random rn = new Random();
-        //int arLength = Homepage.photoAr.size();
-        //int r = rn.nextInt(arLength);
-
-        int r = (int) (Math.random()*Homepage.photoAr.size());
-        cappedPhoto rCP;
+        Random randomNumber = new Random();
+        int arLength = Homepage.photoAr.size();
+        int r = randomNumber.nextInt(arLength);
+        cappedPhoto randomCP;
         //gets random number bounded by size of photoAr
 
-        rCP = Homepage.photoAr.get(r);
-        opta = rCP.getCap();
-        optb = rCP.getCap();
-        optc = rCP.getCap();
+        do {
+            randomCP = Homepage.photoAr.get(r);
+            r = randomNumber.nextInt(arLength);
+            opta = randomCP.getCap();
+            //sets opta to random cappedPhoto caption
+        } while (opta.compareTo(ans) == 0);
+        do {
+            randomCP = Homepage.photoAr.get(r);
+            r = randomNumber.nextInt(arLength);
+            optb = randomCP.getCap();
+            //sets optb to random cappedPhoto caption
+        } while (optb.compareTo(ans) == 0 || optb.compareTo(opta) == 0);
+        do {
+            randomCP = Homepage.photoAr.get(r);
+            r = randomNumber.nextInt(arLength);
+            optc = randomCP.getCap();
             //sets optc to random cappedPhoto caption
+        } while (optc.compareTo(ans) == 0 || optc.compareTo(optb) == 0 || optc.compareTo(opta) == 0);
     }
 
-    public int getID()
-    {
-        return ID;
-    }
-    public Uri getimgUri()
-    {
-        return Uri.parse(imgUri);
-    }
-    public String getopta()
-    {
-        return opta;
-    }
-    public String getoptb()
-    {
-        return optb;
-    }
-    public String getoptc()
-    {
-        return optc;
-    }
-    public String getans()
-    {
-        return ans;
-    }
+    public int getID() {return ID;}
+    public Uri getimgUri() {return Uri.parse(imgUri);}
+    public String getopta() {return opta;}
+    public String getoptb() {return optb;}
+    public String getoptc() {return optc;}
+    public String getans() {return ans;}
 
     public void setID(int id) {ID=id;}
     public void setimgUri(String iMGURI) {imgUri = iMGURI;}

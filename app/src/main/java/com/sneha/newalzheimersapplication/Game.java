@@ -126,8 +126,8 @@ public class Game extends AppCompatActivity {
         btnD.setText(abcd.get(3));
 
         try {
-            Bitmap thumbnail2 = Library.getThumbnail(displayUri,this);
-            imgView.setImageBitmap(thumbnail2);
+            Bitmap thumbnail3 = Library.getThumbnail(displayUri,this);
+            imgView.setImageBitmap(thumbnail3);
 
         } catch (IOException e) {
             e.printStackTrace();
