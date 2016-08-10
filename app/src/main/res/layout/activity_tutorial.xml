@@ -13,21 +13,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="AlzApp Tutorial"
+        android:text="Tutorial"
         android:id="@+id/textView3"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_alignEnd="@+id/textView4" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Whenever we finish this super cool app, we can put text or interactive instructions here!"
+        android:text="The Library allows you to view all the photos you have tagged"
         android:id="@+id/textView4"
         android:layout_below="@+id/textView3"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="100dp"
+        android:textSize="25dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -37,5 +41,17 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:onClick="goHome"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To upload a photo, click on the Library button at the bottom of the home page. Then click the upload photo button at the bottom left of the screen."
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="104dp"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="25dp" />
 
 </RelativeLayout>
