@@ -44,7 +44,9 @@ public class Game extends AppCompatActivity {
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
         btnD = (Button) findViewById(R.id.D);
+    }
 
+    public void startGame(View v){
         Uri displayUri;
         ArrayList<String> abcd = new ArrayList<>(4);
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
