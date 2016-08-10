@@ -37,6 +37,7 @@ public class Game extends AppCompatActivity {
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
         btnD = (Button) findViewById(R.id.D);
+        btnStart = (Button) findViewById(R.id.btnStart);
 
         myName.setVisibility(View.GONE);
         btnA.setVisibility(View.GONE);
@@ -47,7 +48,7 @@ public class Game extends AppCompatActivity {
 
 
     public void startGame(View v){
-        v.setVisibility(View.GONE);
+        btnStart.setVisibility(View.GONE);
         myName.setVisibility(View.VISIBLE);
         btnA.setVisibility(View.VISIBLE);
         btnB.setVisibility(View.VISIBLE);
