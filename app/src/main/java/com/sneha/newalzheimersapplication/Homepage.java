@@ -47,13 +47,6 @@ public class Homepage extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-    public void goUpload(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
-
     public void goGame(View view) {
         if (Homepage.photoAr != null) {
             Intent intent = new Intent(this, Game.class);

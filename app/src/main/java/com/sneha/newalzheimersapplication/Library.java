@@ -142,7 +142,7 @@ public class Library extends AppCompatActivity {
 
         BitmapFactory.Options onlyBoundsOptions = new BitmapFactory.Options();
         onlyBoundsOptions.inJustDecodeBounds = true;
-        onlyBoundsOptions.inDither=true;//optional
+        //onlyBoundsOptions.inDither=true; //deprecated
         onlyBoundsOptions.inPreferredConfig=Bitmap.Config.ARGB_8888;//optional
         BitmapFactory.decodeStream(input, null, onlyBoundsOptions);
         input.close();

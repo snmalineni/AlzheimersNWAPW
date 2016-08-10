@@ -19,7 +19,6 @@ import Source.cappedPhoto;
 public class Game extends AppCompatActivity {
 
     private ImageView imgView;
-    private TextView myName;
     private Button btnA;
     private Button btnB;
     private Button btnC;
@@ -33,6 +32,7 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        TextView myName = (TextView) findViewById(R.id.myName);
         btnA = (Button) findViewById(R.id.A);
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
@@ -87,6 +87,7 @@ public class Game extends AppCompatActivity {
         }
         else {
             btnA.setBackgroundResource(R.drawable.red);
+            Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
         }
     }
     public void clickB(View view) {
@@ -95,6 +96,7 @@ public class Game extends AppCompatActivity {
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
         else {
             btnB.setBackgroundResource(R.drawable.red);
+            Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
         }
     }
     public void clickC(View view) {
@@ -103,6 +105,7 @@ public class Game extends AppCompatActivity {
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
         else {
             btnC.setBackgroundResource(R.drawable.red);
+            Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
         }
     }
     public void clickD(View view) {
@@ -111,6 +114,7 @@ public class Game extends AppCompatActivity {
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
         else {
             btnD.setBackgroundResource(R.drawable.red);
+            Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
         }
     }
 
