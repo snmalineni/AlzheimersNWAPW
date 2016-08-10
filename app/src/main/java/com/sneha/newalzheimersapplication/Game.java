@@ -91,11 +91,16 @@ public class Game extends AppCompatActivity {
         Collections.shuffle(abcd);
         //shuffles abcd
 
-        RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_game);
+        /*RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_game);
         remoteViews.setTextViewText(R.id.A, abcd.get(0));
         remoteViews.setTextViewText(R.id.B, abcd.get(1));
         remoteViews.setTextViewText(R.id.C, abcd.get(2));
         remoteViews.setTextViewText(R.id.D, abcd.get(3));
+        */
+        btnA.setText(abcd.get(0));
+        btnB.setText(abcd.get(1));
+        btnC.setText(abcd.get(2));
+        btnD.setText(abcd.get(3));
 
         try {
             Bitmap thumbnail2 = Library.getThumbnail(displayUri,this);
