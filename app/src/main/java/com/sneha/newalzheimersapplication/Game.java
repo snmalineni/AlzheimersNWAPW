@@ -24,7 +24,6 @@ public class Game extends AppCompatActivity {
     private Button btnC;
     private Button btnD;
     private Button btnStart;
-    private Question q1;
     private String answer;
 
     @Override
@@ -46,18 +45,24 @@ public class Game extends AppCompatActivity {
     }
 
 
-    public void startGame(View view){
+    public void startGame(View v){
         btnStart = (Button) findViewById(R.id.btnStart);
         btnStart.setVisibility(View.GONE);
-
         Uri displayUri;
-        ArrayList<String> abcd = new ArrayList<>();
+
+        ArrayList<String> abcd = new ArrayList<>(Homepage.photoAr.size());
 
         ArrayList<cappedPhoto> arList = new ArrayList<>();
-        for (int i=0; i<Homepage.photoAr.size(); i++) arList.set(i, Homepage.photoAr.get(i));
+        for (int i=0; i<Homepage.photoAr.size(); i++) arList.add(i, Homepage.photoAr.get(i));
         Collections.shuffle(arList);
 
-        q1 = new Question(arList.get(0));
+        System.out.println("------reg list------");
+        for (int j=0; j<4; j++) System.out.println(Homepage.photoAr.get(j).getCap());
+
+        System.out.println("------shuffled list------");
+        for (int j=0; j<4; j++) System.out.println(arList.get(j).getCap());
+
+        Question q1 = new Question(arList.get(0));
 
         displayUri = q1.getimgUri();
         answer = q1.getans();
