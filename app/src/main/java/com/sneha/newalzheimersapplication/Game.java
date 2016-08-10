@@ -36,6 +36,8 @@ public class Game extends AppCompatActivity {
     private Button btnStart;
     private String answer;
     private Context context = this;
+    private ArrayList<cappedPhoto> photoArShuffled;
+    private ArrayList<String> abcd;
 
 
     @Override
@@ -88,31 +90,39 @@ public class Game extends AppCompatActivity {
         btnD.setVisibility(View.VISIBLE);
 
         Uri displayUri;
-        ArrayList<String> abcd = new ArrayList<>();
-        ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
+        abcd = new ArrayList<>();
+        photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
 
-        for (int i=0; i<Homepage.photoAr.size(); i++)
-        {
+        for (int i=0; i<Homepage.photoAr.size(); i++) {
             photoArShuffled.add(Homepage.photoAr.get(i));
         }
         Collections.shuffle(photoArShuffled);
         //puts contents of photoAr into photoArShuffled in random order
 
-        Question q1 = new Question(photoArShuffled.get(0));
-        //declares a question with a random cappedPhoto
+        getNextQuestion();
+    }
+    private int endgame = 0;
 
-        displayUri = q1.getimgUri();
-        answer = q1.getans();
-        //sets image URI to random cappedPhoto's URI; records correct answer
+    public void getNextQuestion(){
+        ImageView imgViewGame = (ImageView)findViewById(R.id.imgView);
+        String file_name = "photocaptions";
+        String name = null;
+        Uri displayUri;
 
-        abcd.add(q1.getopta());
-        abcd.add(q1.getoptb());
-        abcd.add(q1.getoptc());
-        abcd.add(q1.getans());
-        //adds three random strings and one correct string to abcd
+        if(endgame<photoArShuffled.size()) {
+            Question q1 = new Question(photoArShuffled.get(0));
+            displayUri = q1.getimgUri();
+            answer = q1.getans();
+            //sets image URI to random cappedPhoto's URI; records correct answer
 
-        Collections.shuffle(abcd);
-        //shuffles abcd
+            abcd.add(q1.getopta());
+            abcd.add(q1.getoptb());
+            abcd.add(q1.getoptc());
+            abcd.add(q1.getans());
+            //adds three random strings and one correct string to abcd
+
+            Collections.shuffle(abcd);
+            //shuffles abcd
 
         /*RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_game);
         remoteViews.setTextViewText(R.id.A, abcd.get(0));
@@ -120,27 +130,37 @@ public class Game extends AppCompatActivity {
         remoteViews.setTextViewText(R.id.C, abcd.get(2));
         remoteViews.setTextViewText(R.id.D, abcd.get(3));
         */
-        btnA.setText(abcd.get(0));
-        btnB.setText(abcd.get(1));
-        btnC.setText(abcd.get(2));
-        btnD.setText(abcd.get(3));
+            btnA.setText(abcd.get(0));
+            btnB.setText(abcd.get(1));
+            btnC.setText(abcd.get(2));
+            btnD.setText(abcd.get(3));
 
-        InputStream inputPhotoAr;
-        Bitmap game = null;
-        try {
-            inputPhotoAr = this.getContentResolver().openInputStream(displayUri);
-            game = BitmapFactory.decodeStream(inputPhotoAr);
-            game = Bitmap.createScaledBitmap(game, 275, 275, false);
-        } catch (FileNotFoundException e2) {
-            Toast.makeText(getApplicationContext(), "Error: Image Failed to Load", Toast.LENGTH_LONG).show();
+            InputStream inputPhotoAr;
+            Bitmap game = null;
+            try {
+                inputPhotoAr = this.getContentResolver().openInputStream(displayUri);
+                game = BitmapFactory.decodeStream(inputPhotoAr);
+                game = Bitmap.createScaledBitmap(game, 275, 275, false);
+            } catch (FileNotFoundException e2) {
+                Toast.makeText(getApplicationContext(), "Error: Image Failed to Load", Toast.LENGTH_LONG).show();
+            }
+            imgViewGame.setImageBitmap(game);
+            endgame++;
+        } else {
+            myName.setVisibility(View.GONE);
+            btnA.setVisibility(View.GONE);
+            btnB.setVisibility(View.GONE);
+            btnC.setVisibility(View.GONE);
+            btnD.setVisibility(View.GONE);
+            Toast.makeText(getApplicationContext(), "Good Job!", Toast.LENGTH_LONG).show();
         }
-        imgViewGame.setImageBitmap(game);
     }
 
     public void clickA(View view) {
         if (answer == btnA.getText()) {
             btnA.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
+            getNextQuestion();
         }
         else {
             btnA.setBackgroundResource(R.drawable.red);
@@ -151,6 +171,7 @@ public class Game extends AppCompatActivity {
         if (answer == btnB.getText()) {
             btnB.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
+            getNextQuestion();
         }
         else {
             btnB.setBackgroundResource(R.drawable.red);
@@ -161,6 +182,7 @@ public class Game extends AppCompatActivity {
         if (answer == btnC.getText()) {
             btnC.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
+            getNextQuestion();
         }
         else {
             btnC.setBackgroundResource(R.drawable.red);
@@ -171,11 +193,11 @@ public class Game extends AppCompatActivity {
         if (answer == btnD.getText()) {
             btnD.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
+            getNextQuestion();
         }
         else {
             btnD.setBackgroundResource(R.drawable.red);
             Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
