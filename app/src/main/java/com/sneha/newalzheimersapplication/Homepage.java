@@ -48,12 +48,12 @@ public class Homepage extends AppCompatActivity {
     }
 
     public void goGame(View view) {
-        if (Homepage.photoAr != null) {
+        if (Homepage.photoAr.size() < 4) {
             Intent intent = new Intent(this, Game.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
-            Toast.makeText(getApplicationContext() , "Upload some images first!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext() , "Upload at least 4 images first!", Toast.LENGTH_LONG).show();
         }
     }
 }
