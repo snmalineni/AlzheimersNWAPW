@@ -106,11 +106,24 @@ public class Library extends AppCompatActivity {
             TextView txtView = (TextView) (textlayouts.get(iteration));
 
             try {
-                Bitmap thumbnail2 = getThumbnail(imageUri,this);
-                imgView.setImageBitmap(thumbnail2);
+                //Bitmap thumbnail2 = getThumbnail(imageUri,this);
+
+                InputStream inputLibrary;
+                Bitmap library = null;
+                try
+                {
+                    inputLibrary = this.getContentResolver().openInputStream(imageUri);
+                    library = BitmapFactory.decodeStream(inputLibrary);
+                    library = Bitmap.createScaledBitmap(library, 400, 400, false);
+                }
+                catch (FileNotFoundException e2)
+                {
+
+                }
+                imgView.setImageBitmap(library);
                 txtView.setText(imageCaption);
 
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -122,6 +135,7 @@ public class Library extends AppCompatActivity {
 
         }
     }
+
 
 
 
