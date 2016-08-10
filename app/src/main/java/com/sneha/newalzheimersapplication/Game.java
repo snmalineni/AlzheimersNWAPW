@@ -49,6 +49,8 @@ public class Game extends AppCompatActivity {
         btnB.setVisibility(View.GONE);
         btnC.setVisibility(View.GONE);
         btnD.setVisibility(View.GONE);
+
+        System.out.println(Homepage.photoAr.size()); //DELETE
     }
 
 
@@ -63,8 +65,6 @@ public class Game extends AppCompatActivity {
         Uri displayUri;
         ArrayList<String> abcd = new ArrayList<>(4);
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
-
-        System.out.println(Homepage.photoAr.size()); //DELETE
 
         for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(i, Homepage.photoAr.get(i));
         Collections.shuffle(photoArShuffled);
@@ -120,7 +120,8 @@ public class Game extends AppCompatActivity {
     public void clickB(View view) {
         if (answer == btnB.getText()) {
             btnB.setBackgroundResource(R.drawable.green);
-            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
+            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
+        }
         else {
             btnB.setBackgroundResource(R.drawable.red);
             Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
@@ -129,7 +130,8 @@ public class Game extends AppCompatActivity {
     public void clickC(View view) {
         if (answer == btnC.getText()) {
             btnC.setBackgroundResource(R.drawable.green);
-            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
+            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
+        }
         else {
             btnC.setBackgroundResource(R.drawable.red);
             Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
@@ -138,7 +140,8 @@ public class Game extends AppCompatActivity {
     public void clickD(View view) {
         if (answer == btnD.getText()) {
             btnD.setBackgroundResource(R.drawable.green);
-            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();        }
+            Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
+        }
         else {
             btnD.setBackgroundResource(R.drawable.red);
             Toast.makeText(getApplicationContext() , "Try Again!", Toast.LENGTH_SHORT).show();
