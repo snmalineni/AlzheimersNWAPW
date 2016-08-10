@@ -61,8 +61,8 @@ public class Game extends AppCompatActivity {
         btnD.setVisibility(View.VISIBLE);
 
         Uri displayUri;
-        ArrayList<String> abcd = new ArrayList<>(Homepage.photoAr.size());
-        ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>();
+        ArrayList<String> abcd = new ArrayList<>(4);
+        ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
 
         for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(i, Homepage.photoAr.get(i));
         Collections.shuffle(photoArShuffled);
