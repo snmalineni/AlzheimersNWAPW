@@ -44,6 +44,13 @@ public class Game extends AppCompatActivity {
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
         btnD = (Button) findViewById(R.id.D);
+        btnStart = (Button) findViewById(R.id.btnStart);
+
+        myName.setVisibility(View.GONE);
+        btnA.setVisibility(View.GONE);
+        btnB.setVisibility(View.GONE);
+        btnC.setVisibility(View.GONE);
+        btnD.setVisibility(View.GONE);
     }
 
     protected void onResume(){
@@ -63,7 +70,6 @@ public class Game extends AppCompatActivity {
             fileInputStream.close();
 
         } catch (IOException e) {
-
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -71,6 +77,13 @@ public class Game extends AppCompatActivity {
     }
 
     public void startGame(View v){
+        btnStart.setVisibility(View.GONE);
+        myName.setVisibility(View.VISIBLE);
+        btnA.setVisibility(View.VISIBLE);
+        btnB.setVisibility(View.VISIBLE);
+        btnC.setVisibility(View.VISIBLE);
+        btnD.setVisibility(View.VISIBLE);
+
         Uri displayUri;
         ArrayList<String> abcd = new ArrayList<>(4);
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
