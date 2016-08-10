@@ -11,12 +11,12 @@
     tools:context="com.sneha.newalzheimersapplication.Game">
 
     <ImageView
-        android:layout_width="@dimen/gameIcon"
-        android:layout_height="@dimen/gameIcon"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         android:id="@+id/imgView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"

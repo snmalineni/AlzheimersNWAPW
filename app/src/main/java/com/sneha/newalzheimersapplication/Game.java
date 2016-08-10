@@ -37,6 +37,7 @@ public class Game extends AppCompatActivity {
     private String answer;
     private Context context = this;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,7 @@ public class Game extends AppCompatActivity {
     }
 
     public void startGame(View v){
+        ImageView imgViewGame = (ImageView)findViewById(R.id.imgView);
         String file_name = "photocaptions";
         String name = null;
 
@@ -132,7 +134,7 @@ public class Game extends AppCompatActivity {
         } catch (FileNotFoundException e2) {
             Toast.makeText(getApplicationContext(), "Error: Image Failed to Load", Toast.LENGTH_LONG).show();
         }
-        imgView.setImageBitmap(game);
+        imgViewGame.setImageBitmap(game);
     }
 
     public void clickA(View view) {
