@@ -46,6 +46,30 @@ public class Game extends AppCompatActivity {
         btnD = (Button) findViewById(R.id.D);
     }
 
+    protected void onResume(){
+        super.onResume();
+        String file_name = "photocaptions";
+        String name = null;
+
+        try {
+            FileInputStream fileInputStream = context.openFileInput(file_name);
+            File fileDir = new File(context.getFilesDir(), file_name);
+            name = fileDir.getAbsolutePath();
+
+            ObjectInputStream is = new ObjectInputStream(fileInputStream);
+
+            Homepage.photoAr = (ArrayList<cappedPhoto>) is.readObject();
+            is.close();
+            fileInputStream.close();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void startGame(View v){
         Uri displayUri;
         ArrayList<String> abcd = new ArrayList<>(4);
@@ -90,30 +114,6 @@ public class Game extends AppCompatActivity {
             e.printStackTrace();
         }
         //sets imageview to image URI and text on answer buttons to 4 answers in random order
-    }
-
-    protected void onResume(){
-        super.onResume();
-        String file_name = "photocaptions";
-        String name = null;
-
-        try {
-            FileInputStream fileInputStream = context.openFileInput(file_name);
-            File fileDir = new File(context.getFilesDir(), file_name);
-            name = fileDir.getAbsolutePath();
-
-            ObjectInputStream is = new ObjectInputStream(fileInputStream);
-
-            Homepage.photoAr = (ArrayList<cappedPhoto>) is.readObject();
-            is.close();
-            fileInputStream.close();
-
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     public void clickA(View view) {
