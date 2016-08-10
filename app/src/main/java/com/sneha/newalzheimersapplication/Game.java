@@ -1,7 +1,7 @@
 package com.sneha.newalzheimersapplication;
 
+import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,9 +12,10 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileNotFoundException;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -31,6 +32,7 @@ public class Game extends AppCompatActivity {
     private TextView myName;
     private Button btnStart;
     private String answer;
+    private Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,38 +44,40 @@ public class Game extends AppCompatActivity {
         btnB = (Button) findViewById(R.id.B);
         btnC = (Button) findViewById(R.id.C);
         btnD = (Button) findViewById(R.id.D);
-        btnStart = (Button) findViewById(R.id.btnStart);
-
-        myName.setVisibility(View.GONE);
-        btnA.setVisibility(View.GONE);
-        btnB.setVisibility(View.GONE);
-        btnC.setVisibility(View.GONE);
-        btnD.setVisibility(View.GONE);
-
-        System.out.println(Homepage.photoAr.size()); //DELETE
     }
 
+    protected void onResume(){
+        super.onResume();
+        String file_name = "photocaptions";
+        String name = null;
+
+        try {
+            FileInputStream fileInputStream = context.openFileInput(file_name);
+            File fileDir = new File(context.getFilesDir(), file_name);
+            name = fileDir.getAbsolutePath();
+
+            ObjectInputStream is = new ObjectInputStream(fileInputStream);
+
+            Homepage.photoAr = (ArrayList<cappedPhoto>) is.readObject();
+            is.close();
+            fileInputStream.close();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void startGame(View v){
-        btnStart.setVisibility(View.GONE);
-        myName.setVisibility(View.VISIBLE);
-        btnA.setVisibility(View.VISIBLE);
-        btnB.setVisibility(View.VISIBLE);
-        btnC.setVisibility(View.VISIBLE);
-        btnD.setVisibility(View.VISIBLE);
-
         Uri displayUri;
         ArrayList<String> abcd = new ArrayList<>(4);
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
 
-        for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(i, Homepage.photoAr.get(i));
+        for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(Homepage.photoAr.get(i));
         Collections.shuffle(photoArShuffled);
         //puts contents of photoAr into photoArShuffled in random order
-
-        System.out.println("------reg list------"); //DELETE
-        for (int j=0; j<Homepage.photoAr.size(); j++) System.out.println(Homepage.photoAr.get(j).getCap()); //DELETE
-        System.out.println("------shuffled list------"); //DELETE
-        for (int j=0; j<4; j++) System.out.println(photoArShuffled.get(j).getCap()); //DELETE
 
         Question q1 = new Question(photoArShuffled.get(0));
         //declares a question with a random cappedPhoto
