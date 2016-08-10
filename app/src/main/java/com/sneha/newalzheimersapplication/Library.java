@@ -39,7 +39,6 @@ public class Library extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
-
         librarylayout.add((ImageView) findViewById(R.id.A1));
         librarylayout.add((ImageView) findViewById(R.id.A2));
         librarylayout.add((ImageView) findViewById(R.id.A3));
@@ -72,8 +71,6 @@ public class Library extends AppCompatActivity {
         textlayouts.add((TextView)findViewById(R.id.tE2));
         textlayouts.add((TextView)findViewById(R.id.tE3));
 
-
-
     }
 
     protected void onResume(){
@@ -94,7 +91,6 @@ public class Library extends AppCompatActivity {
             is.close();
             fileInputStream.close();
 
-
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -102,9 +98,7 @@ public class Library extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         for (cappedPhoto cP : Homepage.photoAr) {
-
 
             Uri imageUri = Uri.parse(cP.getUriString());
             String imageCaption = cP.getCap();
@@ -112,16 +106,26 @@ public class Library extends AppCompatActivity {
             TextView txtView = (TextView) (textlayouts.get(iteration));
 
             try {
+                //Bitmap thumbnail2 = getThumbnail(imageUri,this);
 
+                InputStream inputLibrary;
+                Bitmap library = null;
+                try
+                {
+                    inputLibrary = this.getContentResolver().openInputStream(imageUri);
+                    library = BitmapFactory.decodeStream(inputLibrary);
+                    library = Bitmap.createScaledBitmap(library, 400, 400, false);
+                }
+                catch (FileNotFoundException e2)
+                {
 
-                Bitmap thumbnail2 = getThumbnail(imageUri,this);
-                imgView.setImageBitmap(thumbnail2);
+                }
+                imgView.setImageBitmap(library);
                 txtView.setText(imageCaption);
 
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-
 
             if (iteration <= 14) {
                 iteration++;
@@ -129,46 +133,8 @@ public class Library extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error: Ran out of storage", Toast.LENGTH_LONG).show();
             }
 
-
-
         }
     }
-
-
-
-    public static Bitmap getThumbnail(Uri uri, AppCompatActivity context) throws FileNotFoundException, IOException
-    {
-        InputStream input = context.getContentResolver().openInputStream(uri);
-
-        BitmapFactory.Options onlyBoundsOptions = new BitmapFactory.Options();
-        onlyBoundsOptions.inJustDecodeBounds = true;
-        onlyBoundsOptions.inDither=true;//optional
-        onlyBoundsOptions.inPreferredConfig=Bitmap.Config.ARGB_8888;//optional
-        BitmapFactory.decodeStream(input, null, onlyBoundsOptions);
-        input.close();
-        if ((onlyBoundsOptions.outWidth == -1) || (onlyBoundsOptions.outHeight == -1))
-            return null;
-
-        int originalSize = (onlyBoundsOptions.outHeight > onlyBoundsOptions.outWidth) ? onlyBoundsOptions.outHeight : onlyBoundsOptions.outWidth;
-
-        double ratio = (originalSize > 70) ? (originalSize / 250) : 1.0;
-
-        BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
-        bitmapOptions.inSampleSize = getPowerOfTwoForSampleRatio(ratio);
-        bitmapOptions.inDither=true;//optional
-        bitmapOptions.inPreferredConfig=Bitmap.Config.ARGB_8888;//optional
-        input = context.getContentResolver().openInputStream(uri);
-        Bitmap bitmap = BitmapFactory.decodeStream(input, null, bitmapOptions);
-        input.close();
-        return bitmap;
-    }
-
-    private static int getPowerOfTwoForSampleRatio(double ratio){
-        int k = Integer.highestOneBit((int)Math.floor(ratio));
-        if(k==0) return 1;
-        else return k;
-    }
-
 
     public void toMain(View v) {
         Intent intent = new Intent(this, MainActivity.class);
@@ -184,6 +150,7 @@ public class Library extends AppCompatActivity {
 
     public void goGame(View view) {
         Intent intent = new Intent(this, Game.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
