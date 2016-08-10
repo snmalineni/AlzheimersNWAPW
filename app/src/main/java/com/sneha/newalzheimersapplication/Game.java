@@ -1,5 +1,7 @@
 package com.sneha.newalzheimersapplication;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +12,9 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -89,9 +94,16 @@ public class Game extends AppCompatActivity {
         remoteViews.setTextViewText(R.id.B, abcd.get(1));
         remoteViews.setTextViewText(R.id.C, abcd.get(2));
         remoteViews.setTextViewText(R.id.D, abcd.get(3));
-        imgView.setImageURI(displayUri);
-        //sets imageview to image URI and text on answer buttons to 4 answers in random order
 
+
+        try {
+                Bitmap thumbnail2 = Library.getThumbnail(displayUri,this);
+                imgView.setImageBitmap(thumbnail2);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        //sets imageview to image URI and text on answer buttons to 4 answers in random order
     }
 
     public void clickA(View view) {

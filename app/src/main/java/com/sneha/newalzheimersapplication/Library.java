@@ -39,7 +39,6 @@ public class Library extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
-
         librarylayout.add((ImageView) findViewById(R.id.A1));
         librarylayout.add((ImageView) findViewById(R.id.A2));
         librarylayout.add((ImageView) findViewById(R.id.A3));
@@ -72,8 +71,6 @@ public class Library extends AppCompatActivity {
         textlayouts.add((TextView)findViewById(R.id.tE2));
         textlayouts.add((TextView)findViewById(R.id.tE3));
 
-
-
     }
 
     protected void onResume(){
@@ -94,7 +91,6 @@ public class Library extends AppCompatActivity {
             is.close();
             fileInputStream.close();
 
-
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -102,9 +98,7 @@ public class Library extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         for (cappedPhoto cP : Homepage.photoAr) {
-
 
             Uri imageUri = Uri.parse(cP.getUriString());
             String imageCaption = cP.getCap();
@@ -112,8 +106,6 @@ public class Library extends AppCompatActivity {
             TextView txtView = (TextView) (textlayouts.get(iteration));
 
             try {
-
-
                 Bitmap thumbnail2 = getThumbnail(imageUri,this);
                 imgView.setImageBitmap(thumbnail2);
                 txtView.setText(imageCaption);
@@ -122,14 +114,11 @@ public class Library extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-
             if (iteration <= 14) {
                 iteration++;
             } else {
                 Toast.makeText(getApplicationContext(), "Error: Ran out of storage", Toast.LENGTH_LONG).show();
             }
-
-
 
         }
     }
