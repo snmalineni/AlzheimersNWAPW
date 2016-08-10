@@ -1,5 +1,6 @@
 package com.sneha.newalzheimersapplication;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +12,10 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -28,6 +32,7 @@ public class Game extends AppCompatActivity {
     private TextView myName;
     private Button btnStart;
     private String answer;
+    private Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,7 @@ public class Game extends AppCompatActivity {
         ArrayList<String> abcd = new ArrayList<>(4);
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
 
-        for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(i, Homepage.photoAr.get(i));
+        for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(Homepage.photoAr.get(i));
         Collections.shuffle(photoArShuffled);
         //puts contents of photoAr into photoArShuffled in random order
 
@@ -83,6 +88,30 @@ public class Game extends AppCompatActivity {
             e.printStackTrace();
         }
         //sets imageview to image URI and text on answer buttons to 4 answers in random order
+    }
+
+    protected void onResume(){
+        super.onResume();
+        String file_name = "photocaptions";
+        String name = null;
+
+        try {
+            FileInputStream fileInputStream = context.openFileInput(file_name);
+            File fileDir = new File(context.getFilesDir(), file_name);
+            name = fileDir.getAbsolutePath();
+
+            ObjectInputStream is = new ObjectInputStream(fileInputStream);
+
+            Homepage.photoAr = (ArrayList<cappedPhoto>) is.readObject();
+            is.close();
+            fileInputStream.close();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void clickA(View view) {
