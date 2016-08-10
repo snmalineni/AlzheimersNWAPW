@@ -14,6 +14,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Emergency Help &amp; Resources"
+        android:textStyle="bold"
+        android:gravity="center"
         android:id="@+id/textView5"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -23,31 +25,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Alzheimer&apos;s Foundation of America hotline: 866-323-85484"
+        android:text="Alzheimer&apos;s Foundation of America hotline:"
         android:id="@+id/textView6"
+        android:textStyle="bold"
         android:layout_below="@+id/textView5"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
-
+        android:layout_marginTop="75dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Alzheimer&apos;s Association hotline: +1 800-272-3900"
+        android:text="866-323-85484"
         android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/textView5"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="135dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Health Emergengy: 911"
+        android:text="Alzheimer&apos;s Association hotline:"
         android:id="@+id/textView8"
+        android:textStyle="bold"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="75dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=" +1 800-272-3900"
+        android:id="@+id/textView9"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Online Resources:"
+        android:textStyle="bold"
+        android:id="@+id/textView10"
         android:layout_alignParentStart="true"
         android:layout_marginTop="15dp"
         android:layout_below="@id/textView7"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="https://alzheimers.acl.gov/"
+        android:id="@+id/textView11"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="180dp"
+        android:layout_below="@id/textView8"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="https://www.nia.nih.gov/alzheimers"
+        android:id="@+id/textView12"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="210dp"
+        android:layout_below="@id/textView8"/>
 
     <Button
         android:layout_width="wrap_content"

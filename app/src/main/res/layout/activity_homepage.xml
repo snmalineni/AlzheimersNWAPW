@@ -13,9 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/welcome"
+        android:text="Welcome! "
         android:id="@+id/welcome"
-        android:textSize="50sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="45sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp" />
@@ -53,7 +55,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="App Tutorial"
+        android:text="Application Tutorial"
         android:id="@+id/button3"
         android:textSize="20sp"
         android:onClick="goTutorial"
