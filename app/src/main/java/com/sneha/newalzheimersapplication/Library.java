@@ -173,6 +173,7 @@ public class Library extends AppCompatActivity {
 
     public void goGame(View view) {
         Intent intent = new Intent(this, Game.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 

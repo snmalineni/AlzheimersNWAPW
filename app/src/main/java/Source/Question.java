@@ -31,27 +31,30 @@ public class Question {
         optb = null;
         optc = null;
 
-        Random rn = new Random();
+        Random randomNumber = new Random();
         int arLength = Homepage.photoAr.size();
-        int r = rn.nextInt(arLength);
-        cappedPhoto rCP;
+        int r = randomNumber.nextInt(arLength);
+        cappedPhoto randomCP;
         //gets random number bounded by size of photoAr
 
         do {
-            rCP = Homepage.photoAr.get(r);
-            opta = rCP.getCap();
+            randomCP = Homepage.photoAr.get(r);
+            r = randomNumber.nextInt(arLength);
+            opta = randomCP.getCap();
             //sets opta to random cappedPhoto caption
-        } while (opta.compareTo(ans) != 0);
+        } while (opta.compareTo(ans) == 0);
         do {
-            rCP = Homepage.photoAr.get(r);
-            optb = rCP.getCap();
+            randomCP = Homepage.photoAr.get(r);
+            r = randomNumber.nextInt(arLength);
+            optb = randomCP.getCap();
             //sets optb to random cappedPhoto caption
-        } while (optb.compareTo(ans) != 0 && optb.compareTo(opta) != 0);
+        } while (optb.compareTo(ans) == 0 || optb.compareTo(opta) == 0);
         do {
-            rCP = Homepage.photoAr.get(r);
-            optc = rCP.getCap();
+            randomCP = Homepage.photoAr.get(r);
+            r = randomNumber.nextInt(arLength);
+            optc = randomCP.getCap();
             //sets optc to random cappedPhoto caption
-        } while (optc.compareTo(ans) != 0 && optc.compareTo(optb) != 0 && optc.compareTo(opta) != 0);
+        } while (optc.compareTo(ans) == 0 || optc.compareTo(optb) == 0 || optc.compareTo(opta) == 0);
     }
     public int getID() {return ID;}
     public Uri getimgUri() {
