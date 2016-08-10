@@ -95,14 +95,13 @@ public class Game extends AppCompatActivity {
         remoteViews.setTextViewText(R.id.C, abcd.get(2));
         remoteViews.setTextViewText(R.id.D, abcd.get(3));
 
-
         try {
-                Bitmap thumbnail2 = Library.getThumbnail(displayUri,this);
-                imgView.setImageBitmap(thumbnail2);
+            Bitmap thumbnail2 = Library.getThumbnail(displayUri,this);
+            imgView.setImageBitmap(thumbnail2);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //sets imageview to image URI and text on answer buttons to 4 answers in random order
     }
 
