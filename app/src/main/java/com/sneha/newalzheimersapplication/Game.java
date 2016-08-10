@@ -64,6 +64,8 @@ public class Game extends AppCompatActivity {
         ArrayList<String> abcd = new ArrayList<>(4);
         ArrayList<cappedPhoto> photoArShuffled = new ArrayList<>(Homepage.photoAr.size());
 
+        System.out.println(Homepage.photoAr.size()); //DELETE
+
         for (int i=0; i<Homepage.photoAr.size(); i++) photoArShuffled.add(i, Homepage.photoAr.get(i));
         Collections.shuffle(photoArShuffled);
         //puts contents of photoAr into photoArShuffled in random order
