@@ -15,4 +15,8 @@
     <string name="next_question">Next Question</string>
     <string name="back_to_home">Back to Home</string>
     <string name="play_again">Play Again</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="yes_clear_all_photos">Yes, clear all photos</string>
+    <string name="no_return_to_library">No, return to library</string>
+    <string name="delete_all_photos">Delete All Photos</string>
 </resources>

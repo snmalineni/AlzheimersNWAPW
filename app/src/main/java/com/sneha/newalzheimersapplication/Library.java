@@ -10,6 +10,8 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -134,6 +136,36 @@ public class Library extends AppCompatActivity {
             }
 
         }
+    }
+
+    private TextView areYouSure = (TextView) findViewById(R.id.textAreYouSure);
+    private Button btnYes = (Button) findViewById(R.id.btnClearAll);
+    private Button btnNo = (Button) findViewById(R.id.btnNoClear);
+    private HorizontalScrollView horizScrollView = (HorizontalScrollView) findViewById(R.id.scrollHorizontal);
+
+    public void clearLib(View v){
+        areYouSure.setVisibility(View.VISIBLE);
+        btnYes.setVisibility(View.VISIBLE);
+        btnNo.setVisibility(View.VISIBLE);
+        horizScrollView.setVisibility(View.GONE);
+    }
+
+    public void clearAll(View view){
+        Homepage.photoAr = null;
+        areYouSure.setVisibility(View.GONE);
+        btnYes.setVisibility(View.GONE);
+        btnNo.setVisibility(View.GONE);
+        horizScrollView.setVisibility(View.VISIBLE);
+        Toast.makeText(getApplicationContext(), "All photos have been deleted. Press Upload Photos to add more.", Toast.LENGTH_LONG).show();
+    }
+
+    public void noClear(View view){
+        areYouSure.setVisibility(View.GONE);
+        btnYes.setVisibility(View.GONE);
+        btnNo.setVisibility(View.GONE);
+        horizScrollView.setVisibility(View.VISIBLE);
+        Toast.makeText(getApplicationContext(), "Your photos are saved", Toast.LENGTH_SHORT).show();
+
     }
 
     public void toMain(View v) {
