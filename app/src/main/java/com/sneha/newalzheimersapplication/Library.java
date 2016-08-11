@@ -82,7 +82,7 @@ public class Library extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         //setContentView(R.layout.activity_library);
-        horizScrollView.findViewById(R.id.scrollHorizontal);
+        horizScrollView = (HorizontalScrollView) findViewById(R.id.scrollHorizontal);
         horizScrollView.setVisibility(View.VISIBLE);
         String file_name = "photocaptions";
         String name = null;
