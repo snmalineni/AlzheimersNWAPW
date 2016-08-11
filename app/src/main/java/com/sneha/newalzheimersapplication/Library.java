@@ -159,6 +159,8 @@ public class Library extends AppCompatActivity {
 
     public void clearAll(View view){
         Homepage.photoAr = null;
+        for (int i = 0; i < 15; i++) librarylayout.set(i, null);
+
         areYouSure.setVisibility(View.GONE);
         btnClearAll.setVisibility(View.GONE);
         btnNo.setVisibility(View.GONE);
