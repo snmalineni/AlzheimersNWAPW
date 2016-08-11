@@ -139,13 +139,13 @@ public class Library extends AppCompatActivity {
     }
 
     private TextView areYouSure = (TextView) findViewById(R.id.textAreYouSure);
-    private Button btnYes = (Button) findViewById(R.id.btnClearAll);
+    private Button btnClearAll = (Button) findViewById(R.id.btnClearAll);
     private Button btnNo = (Button) findViewById(R.id.btnNoClear);
     private HorizontalScrollView horizScrollView = (HorizontalScrollView) findViewById(R.id.scrollHorizontal);
 
     public void clearLib(View v){
         areYouSure.setVisibility(View.VISIBLE);
-        btnYes.setVisibility(View.VISIBLE);
+        btnClearAll.setVisibility(View.VISIBLE);
         btnNo.setVisibility(View.VISIBLE);
         horizScrollView.setVisibility(View.GONE);
     }
@@ -153,7 +153,7 @@ public class Library extends AppCompatActivity {
     public void clearAll(View view){
         Homepage.photoAr = null;
         areYouSure.setVisibility(View.GONE);
-        btnYes.setVisibility(View.GONE);
+        btnClearAll.setVisibility(View.GONE);
         btnNo.setVisibility(View.GONE);
         horizScrollView.setVisibility(View.VISIBLE);
         Toast.makeText(getApplicationContext(), "All photos have been deleted. Press Upload Photos to add more.", Toast.LENGTH_LONG).show();
@@ -161,7 +161,7 @@ public class Library extends AppCompatActivity {
 
     public void noClear(View view){
         areYouSure.setVisibility(View.GONE);
-        btnYes.setVisibility(View.GONE);
+        btnClearAll.setVisibility(View.GONE);
         btnNo.setVisibility(View.GONE);
         horizScrollView.setVisibility(View.VISIBLE);
         Toast.makeText(getApplicationContext(), "Your photos are saved", Toast.LENGTH_SHORT).show();
