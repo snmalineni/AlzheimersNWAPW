@@ -23,7 +23,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="88dp"
         android:layout_height="wrap_content"
-        android:text="Done!"
+        android:text="Saved!"
         android:id="@+id/doneButton"
         android:layout_gravity="right"
         android:onClick="buttonDone"

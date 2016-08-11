@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <<<<<<< HEAD
+<items version="2" />
+=======
+<<<<<<< HEAD
 <items version="2" >
 
     <item
@@ -63,3 +66,4 @@
 =======
 <items version="2" />
 >>>>>>> e43424c7b025d7d5b75d52de12b038ae2bddf5f3
+>>>>>>> master

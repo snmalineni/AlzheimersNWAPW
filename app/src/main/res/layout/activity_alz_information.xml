@@ -26,7 +26,6 @@
         android:id="@+id/scrollView"
         android:layout_alignParentStart="false"
         android:layout_alignParentLeft="false"
-        android:layout_alignEnd="@+id/infoText"
         android:layout_below="@+id/infoTitle"
         android:layout_above="@+id/button4">
 
