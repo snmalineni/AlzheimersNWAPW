@@ -22,9 +22,12 @@ import org.w3c.dom.Text;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import Source.cappedPhoto;
@@ -82,8 +85,6 @@ public class Library extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         //setContentView(R.layout.activity_library);
-        horizScrollView = (HorizontalScrollView) findViewById(R.id.scrollHorizontal);
-        horizScrollView.setVisibility(View.VISIBLE);
         String file_name = "photocaptions";
         String name = null;
         int iteration = 0;
@@ -158,16 +159,37 @@ public class Library extends AppCompatActivity {
     }
 
     public void clearAll(View view){
-        Homepage.photoAr = null;
-        for (int i = 0; i < 15; i++) librarylayout.get(i).setImageBitmap(null);
+        //Homepage.photoAr = null;
 
+        String file_name = "photocaptions";
+
+        try
+        {
+            FileOutputStream fileOutputStream = context.openFileOutput(file_name, Context.MODE_PRIVATE);
+            //File fileDir = new File(context.getFilesDir(), file_name);
+
+            /*ObjectOutputStream os = new ObjectOutputStream(fileOutputStream);
+            os.writeUTF("");
+            os.close(); */
+
+            PrintWriter pWriter = new PrintWriter(fileOutputStream);
+            pWriter.write("");
+            pWriter.close();
+
+            //fileOutputStream.close();
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext() , "Error: Photo and caption were not deleted", Toast.LENGTH_LONG).show();
+        }
+        catch (IOException e) {e.printStackTrace();}
 
         areYouSure.setVisibility(View.GONE);
         btnClearAll.setVisibility(View.GONE);
         btnNo.setVisibility(View.GONE);
-        horizScrollView.setVisibility(View.GONE);
+        horizScrollView.setVisibility(View.VISIBLE);
         Toast.makeText(getApplicationContext(), "All photos have been deleted. Add more in Upload Photos.", Toast.LENGTH_LONG).show();
-        toMain(view);
     }
 
     public void noClear(View view){
