@@ -163,23 +163,14 @@ public class Library extends AppCompatActivity {
 
         String file_name = "photocaptions";
 
-        try
-        {
+        try {
             FileOutputStream fileOutputStream = context.openFileOutput(file_name, Context.MODE_PRIVATE);
-            //File fileDir = new File(context.getFilesDir(), file_name);
-
-            /*ObjectOutputStream os = new ObjectOutputStream(fileOutputStream);
-            os.writeUTF("");
-            os.close(); */
 
             PrintWriter pWriter = new PrintWriter(fileOutputStream);
             pWriter.write("");
             pWriter.close();
 
-            //fileOutputStream.close();
-        }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
             Toast.makeText(getApplicationContext() , "Error: Photo and caption were not deleted", Toast.LENGTH_LONG).show();
         }
