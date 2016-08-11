@@ -40,6 +40,8 @@ public class Game extends AppCompatActivity {
     private Context context = this;
     private ArrayList<cappedPhoto> photoArShuffled;
     private ArrayList<String> abcd;
+    private Button btnToHome;
+    private Button btnStartAgain;
     private int endGame = 0;
 
     @Override
@@ -63,9 +65,12 @@ public class Game extends AppCompatActivity {
         btnC.setVisibility(View.GONE);
         btnD.setVisibility(View.GONE);
         btnNextQuestion.setVisibility(View.GONE);
+
     }
 
     public void startGame(View v){
+
+
         endGame = 0;
         String file_name = "photocaptions";
         String name = null;
@@ -152,8 +157,8 @@ public class Game extends AppCompatActivity {
             btnC.setVisibility(View.GONE);
             btnD.setVisibility(View.GONE);
             btnNextQuestion.setVisibility(View.GONE);
-            Button btnToHome = (Button) findViewById(R.id.btnToHome);
-            Button btnStartAgain = (Button) findViewById(R.id.btnStartAgain);
+            btnToHome = (Button) findViewById(R.id.btnToHome);
+            btnStartAgain = (Button) findViewById(R.id.btnStartAgain);
             btnToHome.setVisibility(View.VISIBLE);
             btnStartAgain.setVisibility(View.VISIBLE);
 
@@ -208,7 +213,16 @@ public class Game extends AppCompatActivity {
         btnB.setBackgroundResource(R.drawable.gray);
         btnC.setBackgroundResource(R.drawable.gray);
         btnD.setBackgroundResource(R.drawable.gray);
+
+
         getNextQuestion();
+    }
+
+    public void startAgainClick(View v)
+    {
+        btnToHome.setVisibility(View.GONE);
+        btnStartAgain.setVisibility(View.GONE);
+        startGame(v);
     }
 
     public void goHome(View view) {
