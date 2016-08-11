@@ -164,7 +164,7 @@ public class Library extends AppCompatActivity {
         btnNo.setVisibility(View.GONE);
         horizScrollView.setVisibility(View.GONE);
         Toast.makeText(getApplicationContext(), "All photos have been deleted. Add more in Upload Photos.", Toast.LENGTH_LONG).show();
-        toMain(btnClearAll);
+        toMain(view);
     }
 
     public void noClear(View view){
