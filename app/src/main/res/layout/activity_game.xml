@@ -87,11 +87,33 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next Question"
-        android:id="@+id/button8"
+        android:text="@string/next_question"
+        android:id="@+id/btnNext"
         android:layout_alignEnd="@+id/btnStart"
         android:layout_alignTop="@+id/D"
         android:layout_toEndOf="@+id/D"
         android:onClick="nextCardClicked" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_home"
+        android:id="@+id/btnToHome"
+        android:textSize="40sp"
+        android:layout_alignTop="@+id/btnStart"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:onClick="goHome" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_again"
+        android:id="@+id/btnStartAgain"
+        android:layout_below="@+id/btnToHome"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"
+        android:visibility="gone"
+        android:onClick="startGame" />
 
 </RelativeLayout>

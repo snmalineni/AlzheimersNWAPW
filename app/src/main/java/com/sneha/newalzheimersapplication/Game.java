@@ -1,6 +1,7 @@
 package com.sneha.newalzheimersapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -32,15 +33,14 @@ public class Game extends AppCompatActivity {
     private Button btnB;
     private Button btnC;
     private Button btnD;
-    private Button nextQuestionBtn;
+    private Button btnNextQuestion;
     private TextView myName;
     private Button btnStart;
     private String answer;
     private Context context = this;
     private ArrayList<cappedPhoto> photoArShuffled;
     private ArrayList<String> abcd;
-    private int randomNumber;
-
+    private int endGame = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class Game extends AppCompatActivity {
         btnC = (Button) findViewById(R.id.C);
         btnD = (Button) findViewById(R.id.D);
 
-        nextQuestionBtn = (Button) findViewById(R.id.button8);
+        btnNextQuestion = (Button) findViewById(R.id.btnNext);
 
         btnStart = (Button) findViewById(R.id.btnStart);
 
@@ -62,11 +62,11 @@ public class Game extends AppCompatActivity {
         btnB.setVisibility(View.GONE);
         btnC.setVisibility(View.GONE);
         btnD.setVisibility(View.GONE);
-        nextQuestionBtn.setVisibility(View.GONE);
+        btnNextQuestion.setVisibility(View.GONE);
     }
 
     public void startGame(View v){
-        ImageView imgViewGame = (ImageView)findViewById(R.id.imgView);
+        endGame = 0;
         String file_name = "photocaptions";
         String name = null;
 
@@ -85,8 +85,7 @@ public class Game extends AppCompatActivity {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
-        //fills homepage.photoAr
+        } //fills homepage.photoAr with stored photos
 
         btnStart.setVisibility(View.GONE);
         myName.setVisibility(View.VISIBLE);
@@ -94,7 +93,7 @@ public class Game extends AppCompatActivity {
         btnB.setVisibility(View.VISIBLE);
         btnC.setVisibility(View.VISIBLE);
         btnD.setVisibility(View.VISIBLE);
-        nextQuestionBtn.setVisibility(View.VISIBLE);
+        btnNextQuestion.setVisibility(View.VISIBLE);
 
         Uri displayUri;
         abcd = new ArrayList<>();
@@ -108,19 +107,15 @@ public class Game extends AppCompatActivity {
 
         getNextQuestion();
     }
-    private int endgame = 0;
 
     public void getNextQuestion(){
-
         ImageView imgViewGame = (ImageView)findViewById(R.id.imgView);
         //Collections.shuffle(photoArShuffled);
-        String file_name = "photocaptions";
-        String name = null;
         Uri displayUri;
         abcd = new ArrayList<>();
 
-        if(endgame<photoArShuffled.size()) {
-            Question q1 = new Question(photoArShuffled.get(endgame));
+        if(endGame < photoArShuffled.size()) {
+            Question q1 = new Question(photoArShuffled.get(endGame));
             displayUri = q1.getimgUri();
             answer = q1.getans();
             //sets image URI to random cappedPhoto's URI; records correct answer
@@ -134,12 +129,6 @@ public class Game extends AppCompatActivity {
             Collections.shuffle(abcd);
             //shuffles abcd
 
-        /*RemoteViews remoteViews = new RemoteViews(getPackageName(), R.layout.activity_game);
-        remoteViews.setTextViewText(R.id.A, abcd.get(0));
-        remoteViews.setTextViewText(R.id.B, abcd.get(1));
-        remoteViews.setTextViewText(R.id.C, abcd.get(2));
-        remoteViews.setTextViewText(R.id.D, abcd.get(3));
-        */
             btnA.setText(abcd.get(0));
             btnB.setText(abcd.get(1));
             btnC.setText(abcd.get(2));
@@ -155,13 +144,18 @@ public class Game extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error: Image Failed to Load", Toast.LENGTH_LONG).show();
             }
             imgViewGame.setImageBitmap(game);
-            endgame++;
+            endGame++;
         } else {
             myName.setVisibility(View.GONE);
             btnA.setVisibility(View.GONE);
             btnB.setVisibility(View.GONE);
             btnC.setVisibility(View.GONE);
             btnD.setVisibility(View.GONE);
+            btnNextQuestion.setVisibility(View.GONE);
+            Button btnToHome = (Button) findViewById(R.id.btnToHome);
+            Button btnStartAgain = (Button) findViewById(R.id.btnStartAgain);
+            btnToHome.setVisibility(View.VISIBLE);
+            btnStartAgain.setVisibility(View.VISIBLE);
 
             Toast.makeText(getApplicationContext(), "Good Job!", Toast.LENGTH_SHORT).show();
             imgViewGame.setImageBitmap(null);
@@ -172,7 +166,6 @@ public class Game extends AppCompatActivity {
         if (answer == btnA.getText()) {
             btnA.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
-            //getNextQuestion();
         }
         else {
             btnA.setBackgroundResource(R.drawable.red);
@@ -183,7 +176,6 @@ public class Game extends AppCompatActivity {
         if (answer == btnB.getText()) {
             btnB.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
-            //getNextQuestion();
         }
         else {
             btnB.setBackgroundResource(R.drawable.red);
@@ -194,7 +186,6 @@ public class Game extends AppCompatActivity {
         if (answer == btnC.getText()) {
             btnC.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
-            //getNextQuestion();
         }
         else {
             btnC.setBackgroundResource(R.drawable.red);
@@ -205,7 +196,6 @@ public class Game extends AppCompatActivity {
         if (answer == btnD.getText()) {
             btnD.setBackgroundResource(R.drawable.green);
             Toast.makeText(getApplicationContext() , "Correct!", Toast.LENGTH_SHORT).show();
-            //getNextQuestion();
         }
         else {
             btnD.setBackgroundResource(R.drawable.red);
@@ -219,5 +209,11 @@ public class Game extends AppCompatActivity {
         btnC.setBackgroundResource(R.drawable.gray);
         btnD.setBackgroundResource(R.drawable.gray);
         getNextQuestion();
+    }
+
+    public void goHome(View view) {
+        Intent intent = new Intent(this, Homepage.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
