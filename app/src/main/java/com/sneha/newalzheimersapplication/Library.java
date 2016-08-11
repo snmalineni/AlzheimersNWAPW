@@ -32,6 +32,10 @@ import Source.cappedPhoto;
 
 public class Library extends AppCompatActivity {
 
+    private TextView areYouSure;
+    private Button btnClearAll;
+    private Button btnNo;
+    private HorizontalScrollView horizScrollView;
     ArrayList<ImageView> librarylayout = new ArrayList<>();
     ArrayList<TextView> textlayouts = new ArrayList<>();
     private Context context = this;
@@ -78,6 +82,8 @@ public class Library extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         //setContentView(R.layout.activity_library);
+        horizScrollView.findViewById(R.id.scrollHorizontal);
+        horizScrollView.setVisibility(View.VISIBLE);
         String file_name = "photocaptions";
         String name = null;
         int iteration = 0;
@@ -138,10 +144,6 @@ public class Library extends AppCompatActivity {
         }
     }
 
-    private TextView areYouSure;
-    private Button btnClearAll;
-    private Button btnNo;
-    private HorizontalScrollView horizScrollView;
 
     public void clearLib(View v){
         areYouSure = (TextView) findViewById(R.id.textAreYouSure);
@@ -160,8 +162,9 @@ public class Library extends AppCompatActivity {
         areYouSure.setVisibility(View.GONE);
         btnClearAll.setVisibility(View.GONE);
         btnNo.setVisibility(View.GONE);
-        horizScrollView.setVisibility(View.VISIBLE);
-        Toast.makeText(getApplicationContext(), "All photos have been deleted. Press Upload Photos to add more.", Toast.LENGTH_LONG).show();
+        horizScrollView.setVisibility(View.GONE);
+        Toast.makeText(getApplicationContext(), "All photos have been deleted. Add more in Upload Photos.", Toast.LENGTH_LONG).show();
+        toMain(btnClearAll);
     }
 
     public void noClear(View view){
@@ -170,7 +173,6 @@ public class Library extends AppCompatActivity {
         btnNo.setVisibility(View.GONE);
         horizScrollView.setVisibility(View.VISIBLE);
         Toast.makeText(getApplicationContext(), "Your photos are saved", Toast.LENGTH_SHORT).show();
-
     }
 
     public void toMain(View v) {
