@@ -16,6 +16,10 @@ import android.widget.TextView;
 import Source.cappedPhoto;
 import android.widget.Toast;
 
+import com.sneha.newalzheimersapplication.Homepage;
+import com.sneha.newalzheimersapplication.Library;
+import com.sneha.newalzheimersapplication.R;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -100,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         {
             FileInputStream fileInputStream = context.openFileInput(file_name);
             ObjectInputStream is = new ObjectInputStream(fileInputStream);
-
             Homepage.photoAr = (ArrayList<cappedPhoto>) is.readObject();
             is.close();
             fileInputStream.close();
@@ -171,6 +174,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
 
 
