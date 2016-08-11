@@ -138,12 +138,17 @@ public class Library extends AppCompatActivity {
         }
     }
 
-    private TextView areYouSure = (TextView) findViewById(R.id.textAreYouSure);
-    private Button btnClearAll = (Button) findViewById(R.id.btnClearAll);
-    private Button btnNo = (Button) findViewById(R.id.btnNoClear);
-    private HorizontalScrollView horizScrollView = (HorizontalScrollView) findViewById(R.id.scrollHorizontal);
+    private TextView areYouSure;
+    private Button btnClearAll;
+    private Button btnNo;
+    private HorizontalScrollView horizScrollView;
 
     public void clearLib(View v){
+        areYouSure = (TextView) findViewById(R.id.textAreYouSure);
+        btnClearAll = (Button) findViewById(R.id.btnClearAll);
+        btnNo = (Button) findViewById(R.id.btnNoClear);
+        horizScrollView = (HorizontalScrollView) findViewById(R.id.scrollHorizontal);
+
         areYouSure.setVisibility(View.VISIBLE);
         btnClearAll.setVisibility(View.VISIBLE);
         btnNo.setVisibility(View.VISIBLE);
