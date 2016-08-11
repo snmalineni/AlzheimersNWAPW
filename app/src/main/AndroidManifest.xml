@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_forgetmenot"
+        android:icon="@mipmap/ic_launcher"
         android:label="Forget Me Not"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

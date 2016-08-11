@@ -10,19 +10,57 @@
     tools:context=".Library">
 
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_all_photos"
+        android:id="@+id/btnClear"
+        android:layout_alignParentRight="true"
+        android:textSize="15sp"
+        android:onClick="clearLib"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/are_you_sure"
+        android:id="@+id/textAreYouSure"
+        android:layout_centerInParent="true"
+        android:textSize="40sp"
+        android:visibility="gone" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yes_clear_all_photos"
+        android:id="@+id/btnClearAll"
+        android:layout_below="@+id/textAreYouSure"
+        android:textSize="30sp"
+        android:visibility="gone"
+        android:onClick="clearAll"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_return_to_library"
+        android:id="@+id/btnNoClear"
+        android:layout_below="@+id/btnClearAll"
+        android:textSize="30sp"
+        android:visibility="gone"
+        android:onClick="noClear"/>
 
     <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollHorizontal">
+        android:id="@+id/scrollHorizontal"
+        android:layout_below="@+id/btnClear"
+        android:layout_above="@+id/btnTable">
 
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/scrollView2"
-        android:layout_below="@+id/button5"
-        android:layout_above="@+id/btnTable">
+        android:id="@+id/scrollView2">
 
         <TableLayout
             android:id="@+id/tLayout"

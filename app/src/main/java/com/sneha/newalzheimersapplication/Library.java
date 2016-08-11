@@ -10,6 +10,8 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,9 +22,12 @@ import org.w3c.dom.Text;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import Source.cappedPhoto;
@@ -30,6 +35,10 @@ import Source.cappedPhoto;
 
 public class Library extends AppCompatActivity {
 
+    private TextView areYouSure;
+    private Button btnClearAll;
+    private Button btnNo;
+    private HorizontalScrollView horizScrollView;
     ArrayList<ImageView> librarylayout = new ArrayList<>();
     ArrayList<TextView> textlayouts = new ArrayList<>();
     private Context context = this;
@@ -134,6 +143,52 @@ public class Library extends AppCompatActivity {
             }
 
         }
+    }
+
+
+    public void clearLib(View v){
+        areYouSure = (TextView) findViewById(R.id.textAreYouSure);
+        btnClearAll = (Button) findViewById(R.id.btnClearAll);
+        btnNo = (Button) findViewById(R.id.btnNoClear);
+        horizScrollView = (HorizontalScrollView) findViewById(R.id.scrollHorizontal);
+
+        areYouSure.setVisibility(View.VISIBLE);
+        btnClearAll.setVisibility(View.VISIBLE);
+        btnNo.setVisibility(View.VISIBLE);
+        horizScrollView.setVisibility(View.GONE);
+    }
+
+    public void clearAll(View view){
+        //Homepage.photoAr = null;
+
+        String file_name = "photocaptions";
+
+        try {
+            FileOutputStream fileOutputStream = context.openFileOutput(file_name, Context.MODE_PRIVATE);
+
+            PrintWriter pWriter = new PrintWriter(fileOutputStream);
+            pWriter.write("");
+            pWriter.close();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext() , "Error: Photo and caption were not deleted", Toast.LENGTH_LONG).show();
+        }
+        catch (IOException e) {e.printStackTrace();}
+
+        areYouSure.setVisibility(View.GONE);
+        btnClearAll.setVisibility(View.GONE);
+        btnNo.setVisibility(View.GONE);
+        horizScrollView.setVisibility(View.VISIBLE);
+        Toast.makeText(getApplicationContext(), "All photos have been deleted. Add more in Upload Photos.", Toast.LENGTH_LONG).show();
+    }
+
+    public void noClear(View view){
+        areYouSure.setVisibility(View.GONE);
+        btnClearAll.setVisibility(View.GONE);
+        btnNo.setVisibility(View.GONE);
+        horizScrollView.setVisibility(View.VISIBLE);
+        Toast.makeText(getApplicationContext(), "Your photos are saved", Toast.LENGTH_SHORT).show();
     }
 
     public void toMain(View v) {
