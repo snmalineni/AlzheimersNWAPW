@@ -32,6 +32,7 @@ public class Question {
         optc = "";
 
         Random randomNumber = new Random();
+        //int r = (int)Math.random()*Homepage.photoAr.size() + 1;
         int arLength = Homepage.photoAr.size();
         int r = randomNumber.nextInt(arLength);
         cappedPhoto randomCP;

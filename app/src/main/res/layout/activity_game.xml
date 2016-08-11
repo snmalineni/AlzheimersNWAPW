@@ -83,4 +83,15 @@
         android:layout_alignParentEnd="true"
         android:onClick="startGame" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Question"
+        android:id="@+id/button8"
+        android:layout_alignEnd="@+id/btnStart"
+        android:layout_alignTop="@+id/D"
+        android:layout_toEndOf="@+id/D"
+        android:onClick="nextCardClicked" />
+
 </RelativeLayout>
